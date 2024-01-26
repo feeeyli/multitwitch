@@ -19,9 +19,9 @@
     - [x] Search by groups
     - [x] Hide members from groups
     - [ ] List selected groups with hides
-    - [*] Create, edit and delete groups
-      - [*] Choose group name and slug
-      - [*] Show pinned streamers on create group
+    - [x] Create, edit and delete groups
+      - [x] Choose group name and slug
+      - [x] Show pinned streamers on create group
       - [ ] \*Add custom skin heads to pinned streamer
   - [ ] Organizer
     - [ ] List streamers, groups and streamers in groups
