@@ -1,0 +1,103 @@
+{
+  "selector-dialog": {
+    "title": "Seletor",
+    "description": "Escolha seus streamers {type, select, twitch {fixados} other {do QSMP}} ou busque por streamers na Twitch.",
+    "tabs": {
+      "streamers-tab": {
+        "title": "Streamers",
+        "avatar-alt": "Avatar de {name}",
+        "add-favorite": "Adicionar aos favoritos",
+        "remove-favorite": "Remover dos favoritos",
+        "add-pinned": "Adicionar aos fixados",
+        "remove-pinned": "Remover dos fixados",
+        "not-playing": "Esse streamer pode não estar jogando QSMP",
+        "streamer-search-label": "Buscar por streamer {type, select, static {no QSMP} pinned {fixados} other {na Twitch}}",
+        "loading-streamers": "Carregando streamers",
+        "loading-info": "Buscando informações",
+        "no-searched-streamers": "Começe a escrever para buscar streamers...",
+        "no-pinned-streamers": "Parece que você não tem nenhum streamer fixado. <br></br><br></br>Clique no botão ao lado da barra de busca, pesquise e fixe seus streamers favoritos. <br></br><br></br>Streamers fixados irão aparecer aqui para acesso rapido.",
+        "new-participants": "{count, plural, =1 {Novo participante!} other {Novos participantes!}}",
+        "sort": {
+          "label": "Ordenar",
+          "default": "Padrão",
+          "name": "Nome",
+          "online-first": "Online primeiro",
+          "playing-first": "Jogando QSMP primeiro"
+        },
+        "select": {
+          "label": "Selecionar",
+          "all": "Todos",
+          "none": "Nenhum",
+          "online": "Todos onlines",
+          "playing": "Todos jogando QSMP"
+        }
+      },
+      "groups-tab": {
+        "title": "Grupos",
+        "skin-alt": "Skin de {name}",
+        "add-favorite": "Adicionar aos favoritos",
+        "remove-favorite": "Remover dos favoritos",
+        "group-search-label": "Buscar por grupos",
+        "hide-members": "Esconder",
+        "select": {
+          "label": "Selecionar",
+          "all": "Todos",
+          "none": "Nenhum"
+        }
+      }
+    }
+  },
+  "custom-group-dialogs": {
+    "create": {
+      "title": "Criar grupo",
+      "save": "Criar",
+      "cancel": "Cancelar",
+      "form": {
+        "display-name": {
+          "label": "Nome",
+          "placeholder": "ex.: Grupo Legal <3",
+          "error": "O nome não pode ser vazio."
+        },
+        "simple-name": {
+          "label": "Nome na URL (deixe em branco para gerar automaticamente)",
+          "placeholder": "ex.: grupo-legal",
+          "error": "O nome não pode ser vazio."
+        },
+        "members": {
+          "label": "Membros",
+          "error": "Escolha pelo menos 1 streamer.",
+          "avatar-alt": "Avatar de {name}"
+        }
+      }
+    },
+    "edit": {
+      "title": "Editar grupo",
+      "save": "Salvar",
+      "delete": "Excluir",
+      "cancel": "Cancelar",
+      "form": {
+        "display-name": {
+          "label": "Nome",
+          "placeholder": "ex.: Grupo Legal <3",
+          "error": "O nome não pode ser vazio."
+        },
+        "simple-name": {
+          "label": "Nome na URL (deixe em branco para gerar automaticamente)",
+          "placeholder": "ex.: grupo-legal",
+          "error": "O nome não pode ser vazio."
+        },
+        "members": {
+          "label": "Membros",
+          "error": "Escolha pelo menos 1 streamer.",
+          "avatar-alt": "Avatar de {name}"
+        }
+      }
+    },
+    "delete": {
+      "title": "Excluir",
+      "description": "Você está prestes a deletar o grupo \"{ name }\", está certo disso? Essa ação não pode ser desfeita.",
+      "cancel": "Cancelar",
+      "confirm": "Sim, excluir"
+    }
+  }
+}

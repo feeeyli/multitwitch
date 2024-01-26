@@ -1,0 +1,7 @@
+{
+  "cSpell.words": ["frogg", "Lexend", "qsmp", "zustand"],
+  "cSpell.language": "en,pt-BR,es-ES,fr,pt",
+  "i18n-ally.localesPaths": ["src/messages"],
+  "i18n-ally.keystyle": "nested",
+  "cSpell.enableFiletypes": ["!json"]
+}

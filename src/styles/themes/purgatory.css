@@ -1,0 +1,46 @@
+@layer theme {
+  :root .purgatory {
+    --background: 180 33% 97%;
+    --foreground: 180 16% 6%;
+    --card: 180 33% 97%;
+    --card-foreground: 180 16% 6%;
+    --popover: 180 33% 97%;
+    --popover-foreground: 180 16% 6%;
+    --primary: 178 49% 29%;
+    --primary-foreground: 180 33% 97%;
+    --secondary: 178 67% 68%;
+    --secondary-foreground: 180 16% 6%;
+    --muted: 180 33% 20%;
+    --muted-foreground: 180 16% 70%;
+    --accent: 179 85% 47%;
+    --accent-foreground: 180 16% 6%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 180 16% 6%;
+    --border: 180 33% 20%;
+    --input: 180 33% 20%;
+    --ring: 179 85% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark .purgatory {
+    --background: 180 33% 3%;
+    --foreground: 180 16% 94%;
+    --card: 180 33% 3%;
+    --card-foreground: 180 16% 94%;
+    --popover: 180 33% 3%;
+    --popover-foreground: 180 16% 94%;
+    --primary: 178 49% 71%;
+    --primary-foreground: 180 33% 3%;
+    --secondary: 178 67% 32%;
+    --secondary-foreground: 180 33% 3%;
+    --muted: 180 33% 80%;
+    --muted-foreground: 180 16% 94%;
+    --accent: 179 85% 53%;
+    --accent-foreground: 180 33% 3%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 180 18% 10%;
+    --border: 180 33% 60%;
+    --input: 180 33% 80%;
+    --ring: 179 85% 60%;
+  }
+}

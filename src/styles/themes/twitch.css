@@ -1,0 +1,46 @@
+@layer theme {
+  :root .twitch {
+    --background: 336 24% 96%;
+    --foreground: 340 15% 8%;
+    --card: 336 24% 96%;
+    --card-foreground: 340 15% 8%;
+    --popover: 336 24% 96%;
+    --popover-foreground: 340 15% 8%;
+    --primary: 336 56% 26%;
+    --primary-foreground: 336 24% 96%;
+    --secondary: 336 69% 67%;
+    --secondary-foreground: 340 15% 8%;
+    --muted: 335 24% 20%;
+    --muted-foreground: 339 15% 70%;
+    --accent: 336 80% 48%;
+    --accent-foreground: 336 24% 96%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 340 15% 8%;
+    --border: 335 24% 20%;
+    --input: 335 24% 20%;
+    --ring: 336 80% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark .twitch {
+    --background: 336 26% 4%;
+    --foreground: 340 15% 92%;
+    --card: 336 26% 4%;
+    --card-foreground: 340 15% 92%;
+    --popover: 336 26% 4%;
+    --popover-foreground: 340 15% 92%;
+    --primary: 336 56% 74%;
+    --primary-foreground: 336 26% 4%;
+    --secondary: 336 69% 33%;
+    --secondary-foreground: 340 15% 92%;
+    --muted: 337 25% 80%;
+    --muted-foreground: 340 15% 92%;
+    --accent: 336 80% 52%;
+    --accent-foreground: 336 26% 4%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 343 14% 10%;
+    --border: 336 26% 60%;
+    --input: 337 25% 80%;
+    --ring: 336 80% 60%;
+  }
+}

@@ -1,0 +1,46 @@
+@layer theme {
+  :root .frogg {
+    --background: 144 33% 97%;
+    --foreground: 135 9% 9%;
+    --card: 144 33% 97%;
+    --card-foreground: 135 9% 9%;
+    --popover: 144 33% 97%;
+    --popover-foreground: 135 9% 9%;
+    --primary: 135 50% 28%;
+    --primary-foreground: 144 33% 97%;
+    --secondary: 135 71% 66%;
+    --secondary-foreground: 135 9% 9%;
+    --muted: 145 33% 20%;
+    --muted-foreground: 134 8% 70%;
+    --accent: 135 91% 50%;
+    --accent-foreground: 135 9% 9%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 135 9% 9%;
+    --border: 145 33% 20%;
+    --input: 145 33% 20%;
+    --ring: 135 91% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark .frogg {
+    --background: 144 33% 3%;
+    --foreground: 135 9% 91%;
+    --card: 144 33% 3%;
+    --card-foreground: 135 9% 91%;
+    --popover: 144 33% 3%;
+    --popover-foreground: 135 9% 91%;
+    --primary: 135 50% 72%;
+    --primary-foreground: 144 33% 3%;
+    --secondary: 135 71% 34%;
+    --secondary-foreground: 144 33% 3%;
+    --muted: 145 33% 80%;
+    --muted-foreground: 135 9% 91%;
+    --accent: 135 91% 50%;
+    --accent-foreground: 144 33% 3%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 132 10% 10%;
+    --border: 144 33% 60%;
+    --input: 145 33% 80%;
+    --ring: 135 91% 60%;
+  }
+}
