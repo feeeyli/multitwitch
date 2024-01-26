@@ -1,26 +1,35 @@
+import { GROUPS } from "@/data/groups";
 import { STREAMERS } from "@/data/streamers";
+import { getFromArray } from "@/lib/get-from-array";
+import { useCustomDataStore } from "@/stores/custom-data-store";
+import { GroupWithHideSchema } from "@/stores/selector-store";
+import { GroupSchema } from "@/types/groups.schema";
 import { StreamerSchema } from "@/types/streamer.schema";
 import { useSearchParams } from "next/navigation";
+import useStore from "./use-store";
 
-export function useSearchParamsData(): [
-  StreamerSchema[],
-  {
-    display_name: string;
-    simple_name: string;
-    members: {
-      display_name: string;
-      twitch_name: string;
-      is_hidden: boolean;
-      chat_opened: boolean;
-    }[];
-  }[]
-] {
+export function useSearchParamsData(): {
+  streamers: StreamerSchema[];
+  groups: GroupWithHideSchema[];
+  chats: string[];
+  isLoading: boolean;
+} {
   const searchParams = useSearchParams();
-  // const customGroups = [];
+  const customData = useStore(useCustomDataStore, (state) => state);
 
-  const streamersOnQuery = searchParams.get("streamers")?.split("/") || [];
-  // const groupsOnQuery = searchParams.get('groups')?.split('/') || [];
-  // const chatsOnQuery = searchParams.get('chats')?.split('/') || [];
+  if (typeof customData === "undefined")
+    return {
+      streamers: [],
+      groups: [],
+      chats: [],
+      isLoading: true,
+    };
+
+  const query = {
+    streamers: searchParams.get("streamers")?.split("/") ?? [],
+    groups: searchParams.get("groups")?.split("/") ?? [],
+    chats: searchParams.get("chats")?.split("/") ?? [],
+  };
 
   /*#region Groups
 
@@ -76,23 +85,52 @@ export function useSearchParamsData(): [
 
   //#endregion*/
 
-  //#region Streamers
+  const streamers: StreamerSchema[] = query.streamers.map((twitch_name) => {
+    const streamer = getFromArray<StreamerSchema>(
+      [STREAMERS, customData.pinnedStreamers].flat(),
+      "twitch_name",
+      twitch_name
+    );
 
-  const streamers: StreamerSchema[] = streamersOnQuery.map((s) => {
-    const streamer = STREAMERS.find((ss) => ss.twitch_name === s);
+    if (typeof streamer === "undefined") {
+      return {
+        display_name: twitch_name,
+        twitch_name,
+        avatar_url: "https://placehold.co/300x300/281f37/f9fafb.png?text=o_o",
+        no_data: true,
+        default_streamer: false,
+      };
+    }
 
-    if (streamer) return streamer;
-
-    return {
-      twitch_name: s,
-      display_name: s,
-      avatar_url: "https://placehold.co/300x300/1E1A23/FFF.png?text=o_0",
-      no_data: true,
-      default_streamer: false,
-    };
+    return streamer;
   });
 
-  //#endregion
+  const groups = query.groups
+    .map((name) => {
+      const [simple_name, hided = ""] = name.split(".");
+      const hided_members = hided.split("-");
 
-  return [streamers, []];
+      const group = getFromArray<GroupSchema>(
+        [GROUPS, customData.customGroups].flat(),
+        "simple_name",
+        simple_name
+      );
+
+      if (typeof group === "undefined") return null;
+
+      return {
+        ...group,
+        hided_members: group.members.filter((member) =>
+          hided_members.includes(member.twitch_name)
+        ),
+      };
+    })
+    .filter((group) => group) as GroupWithHideSchema[];
+
+  return {
+    streamers,
+    groups,
+    chats: query.chats,
+    isLoading: false,
+  };
 }

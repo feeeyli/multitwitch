@@ -11,10 +11,12 @@ import {
 } from "@/components/ui/dialog";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { env } from "@/env";
+import { useSearchParamsData } from "@/hooks/use-search-params-data";
 import useStore from "@/hooks/use-store";
 import { useSelectorStore } from "@/stores/selector-store";
 import { ArrowLeftRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 import { GroupsTab } from "./tabs/groups/groups-tab";
 import { SelectorFooter } from "./tabs/selector-footer";
 import { StreamersTab } from "./tabs/streamers/streamers-tab";
@@ -22,6 +24,19 @@ import { StreamersTab } from "./tabs/streamers/streamers-tab";
 export function SelectorDialog() {
   const t = useTranslations("selector-dialog");
   const selector = useStore(useSelectorStore, (state) => state);
+  const { streamers, groups, isLoading } = useSearchParamsData();
+
+  function setSelected() {
+    selector?.setSelectedStreamers(streamers);
+    selector?.setSelectedGroups(groups);
+  }
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    setSelected();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading]);
 
   return (
     <Dialog
@@ -30,6 +45,7 @@ export function SelectorDialog() {
           selector?.setSelectedStreamers([]);
           selector?.setSelectedGroups([]);
         } else {
+          setSelected();
         }
       }}
     >

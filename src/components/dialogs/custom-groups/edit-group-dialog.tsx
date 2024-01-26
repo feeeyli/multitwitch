@@ -130,12 +130,7 @@ export function EditGroupDialog(props: EditGroupDialogProps) {
                   <FormControl>
                     <Input
                       placeholder={t("form.simple-name.placeholder")}
-                      defaultValue={formatName(form.watch("display_name"))}
                       {...field}
-                      onChange={(e) => {
-                        field.onChange(formatName(e.target.value));
-                      }}
-                      value={undefined}
                     />
                   </FormControl>
                   <FormMessage>{t("form.simple-name.error")}</FormMessage>

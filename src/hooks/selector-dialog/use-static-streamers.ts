@@ -14,7 +14,8 @@ export function useStaticStreamers(): {
   const searchMode = useStreamersSearchStore((state) => state.mode);
 
   const customData = useStore(useCustomDataStore, (state) => state);
-  const [streamersOnQuery] = useSearchParamsData();
+  const { streamers: streamersOnQuery, isLoading: isLoadingSearchParams } =
+    useSearchParamsData();
 
   const NoDataStreamers = [
     customData?.pinnedStreamers || [],
@@ -33,11 +34,13 @@ export function useStaticStreamers(): {
     queryKey: [
       "static-streamers",
       "pinned-loaded:" + (typeof customData?.pinnedStreamers !== "undefined"),
+      "search-params-loaded:" + !isLoadingSearchParams,
     ],
     queryFn: async () => {
       if (
         typeof customData?.pinnedStreamers === "undefined" ||
-        searchMode === "twitch"
+        searchMode === "twitch" ||
+        isLoadingSearchParams
       )
         return [];
 
@@ -60,7 +63,8 @@ export function useStaticStreamers(): {
   const Streamers: StreamerSchema[] =
     isLoading ||
     typeof DataStreamers === "undefined" ||
-    DataStreamers.length === 0
+    DataStreamers.length === 0 ||
+    isLoadingSearchParams
       ? NoDataStreamers
       : DataStreamers;
 

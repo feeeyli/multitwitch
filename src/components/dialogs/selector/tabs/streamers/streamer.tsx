@@ -122,7 +122,11 @@ export function StreamerPinnedButton() {
           });
 
           queryClient.setQueryData(
-            ["static-streamers", "pinned-loaded:true"],
+            [
+              "static-streamers",
+              "pinned-loaded:true",
+              "search-params-loaded:true",
+            ],
             (data: StreamerSchema[]) => {
               if (data.some((ds) => ds.twitch_name === streamer.twitch_name))
                 return data;

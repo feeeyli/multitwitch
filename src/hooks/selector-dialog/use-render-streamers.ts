@@ -1,25 +1,16 @@
-import { useCustomDataStore } from "@/stores/custom-data-store";
-import { useFavoritesStore } from "@/stores/favorites-store";
 import { StreamerSchema } from "@/types/streamer.schema";
 import { ReactNode } from "react";
-import useStore from "../use-store";
 
-type ArrayNames = "new" | "favorite" | "default" | "non-default";
+export type ArrayNames = "new" | "favorite" | "default" | "non-default";
 
-export function useRenderStreamers(): (
+export function useRenderStreamers(
+  favoriteStreamersStorage: string[],
+  pinnedStreamersStorage: StreamerSchema[]
+): (
   streamers: StreamerSchema[],
   separator: (index: number) => ReactNode,
   arrayRender: (streamers: StreamerSchema[], name: ArrayNames) => ReactNode
 ) => (ReactNode | StreamerSchema[])[] {
-  const favoriteStreamersStorage = useStore(
-    useFavoritesStore,
-    (state) => state.favoriteStreamers
-  );
-  const pinnedStreamersStorage = useStore(
-    useCustomDataStore,
-    (state) => state.pinnedStreamers
-  );
-
   function filter(
     streamers: StreamerSchema[],
     filterArray: string[],
@@ -79,12 +70,12 @@ export function useRenderStreamers(): (
 
     const favoriteStreamers = filter(
       newParticipants[1],
-      favoriteStreamersStorage ?? []
+      favoriteStreamersStorage
     );
 
     const pinnedStreamers = filter(
       favoriteStreamers[1],
-      (pinnedStreamersStorage ?? []).map((streamer) => streamer.twitch_name)
+      pinnedStreamersStorage.map((streamer) => streamer.twitch_name)
     );
 
     const defaultStreamers = pinnedStreamers[1].filter(

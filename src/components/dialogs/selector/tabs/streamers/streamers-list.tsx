@@ -3,7 +3,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { ToggleGroup } from "@/components/ui/toggle-group";
 import { env } from "@/env";
-import { useRenderStreamers } from "@/hooks/selector-dialog/use-render-streamers";
+import { ArrayNames } from "@/hooks/selector-dialog/use-render-streamers";
 import { useSortStreamers } from "@/hooks/selector-dialog/use-sort-streamers";
 import { getStreamer } from "@/lib/getStreamer";
 import { set } from "@/lib/set";
@@ -11,7 +11,7 @@ import { useSelectorStore } from "@/stores/selector-store";
 import { useStreamersSearchStore } from "@/stores/streamers-search-store";
 import { StreamerSchema } from "@/types/streamer.schema";
 import { useTranslations } from "next-intl";
-import { Fragment } from "react";
+import { Fragment, ReactNode } from "react";
 import {
   Streamer,
   StreamerFavoriteButton,
@@ -24,6 +24,12 @@ type StreamersListProps = {
   SearchedStaticStreamers: StreamerSchema[];
   StaticStreamers: StreamerSchema[];
   isLoading: boolean;
+  render: (
+    streamers: StreamerSchema[],
+    separator: (index: number) => ReactNode,
+    arrayRender: (streamers: StreamerSchema[], name: ArrayNames) => ReactNode
+  ) => (ReactNode | StreamerSchema[])[];
+  renderAwait: boolean;
 };
 
 export function StreamersList({
@@ -31,12 +37,13 @@ export function StreamersList({
   SearchedTwitchStreamers,
   StaticStreamers,
   isLoading,
+  render,
+  renderAwait,
 }: StreamersListProps) {
   const searchMode = useStreamersSearchStore((state) => state.mode);
   const selected = useSelectorStore((state) => state);
   const t = useTranslations("selector-dialog.tabs.streamers-tab");
 
-  const render = useRenderStreamers();
   const sort = useSortStreamers();
 
   return (
@@ -62,7 +69,9 @@ export function StreamersList({
           );
         }}
       >
-        {isLoading && <Loader>{t("loading-streamers")}</Loader>}
+        {(isLoading || renderAwait) && (
+          <Loader>{t("loading-streamers")}</Loader>
+        )}
         {searchMode === "static" &&
           env.APP_VARIANT === "twitch" &&
           StaticStreamers.length === 0 && (
@@ -81,6 +90,7 @@ export function StreamersList({
           )}
         <>
           {searchMode === "static" &&
+            !renderAwait &&
             render(
               set(SearchedStaticStreamers, selected.selectedStreamers),
               (index) => <Separator key={index} />,

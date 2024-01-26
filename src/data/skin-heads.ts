@@ -17,7 +17,7 @@ export const SKIN_HEAD = (skin: string, fallback?: string) => {
 
   if (!head)
     return (
-      fallback ?? "https://placehold.co/300x300/281f37/f9fafb.png?text=O_O"
+      fallback ?? "https://placehold.co/300x300/281f37/f9fafb.png?text=o_o"
     );
 
   return head;

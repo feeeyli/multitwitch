@@ -2,6 +2,8 @@
   "selector-dialog": {
     "title": "Seletor",
     "description": "Escolha seus streamers {type, select, twitch {fixados} other {do QSMP}} ou busque por streamers na Twitch.",
+    "watch": "Assistir",
+    "selected": "{count, plural, =0 {Nenhum streamer ou grupo selecionado} =1 {Streamer ou grupo selecionado: } other {Streamers ou grupos selecionados: }}",
     "tabs": {
       "streamers-tab": {
         "title": "Streamers",
@@ -82,7 +84,7 @@
           "error": "O nome não pode ser vazio."
         },
         "simple-name": {
-          "label": "Nome na URL (deixe em branco para gerar automaticamente)",
+          "label": "Nome na URL",
           "placeholder": "ex.: grupo-legal",
           "error": "O nome não pode ser vazio."
         },

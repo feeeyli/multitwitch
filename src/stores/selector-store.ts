@@ -2,7 +2,7 @@ import { GroupSchema } from "@/types/groups.schema";
 import { StreamerSchema } from "@/types/streamer.schema";
 import { create } from "zustand";
 
-type GroupWithHideSchema = GroupSchema & {
+export type GroupWithHideSchema = GroupSchema & {
   hided_members: {
     display_name: string;
     twitch_name: string;
