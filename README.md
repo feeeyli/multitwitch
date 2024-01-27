@@ -28,11 +28,11 @@
     - [x] Enable/disable chats
     - [x] Remove streamer or group
     - [x] Hide members from groups
-  - [ ] Events
-    - [ ] Countdown to next event
-    - [ ] List all next events
-      - [ ] Show event date
-      - [ ] List all announcements tweets
+  - [x] Events
+    - [x] Countdown to next event
+    - [x] List all next events
+      - [x] Show event date
+      - [x] List all announcements tweets
   - [ ] Settings
     - [ ] Theme (_dark_, light)
     - [ ] Dialog position (_right_, bottom, left)
