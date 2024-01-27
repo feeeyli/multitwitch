@@ -116,5 +116,36 @@
     "next-event": "Proximo evento em:",
     "event-started": "O evento já começou!",
     "no-events": "Nenhum evento programado!"
+  },
+  "settings-dialog": {},
+  "faq-dialog": {
+    "title": "FAQ",
+    "description": "Ache a resposta pra algumas perguntas que você possa ter.",
+    "faq-list": {
+      "twitch-account": {
+        "title": "Posso utilizar minha conta da Twitch?",
+        "content": "Sim, para isso há 3 jeitos: \n- Conecte sua conta pelo site da [Twitch](http://twitch.tv) e então atualize a pagina do MultiQSMP. \n- Envie uma mensagem em qualquer chat pelo MultiQSMP e um alerta de login aparecerá. \n- Em qualquer live, clique em seguir e o alerta de login também aparecerá."
+      },
+      "enable-chat": {
+        "title": "Como ativo o chat?",
+        "content": "No topo de cada live há uma pequena seta, clicando nela abrirá um menu com varias opções, entre elas um botão para alternar o chat da live em questão."
+      },
+      "streamers-status": {
+        "title": "Oque significa as variações nos streamers?",
+        "content": "Quando o streamer está cinza, isso significa que ele está offline. Quando há um indicador amarelo ele está online porem pode não estar jogando QSMP no momento. \n\n **Obs.:** Para indicar se o streamers está ou não jogando QSMP é levado em consideração as tags e o jogo marcado na live, por isso nem sempre o indicador estará correto."
+      },
+      "found-bug": {
+        "title": "Encontrei/estou tendo um erro!",
+        "content": "Se você estiver com algum erro, algo não estiver funcionando corretamente e afins, você pode entrar no nosso [formulário de feedbacks](https://forms.gle/ceFMBMkvyUKwxpms7) e explicar seu problema."
+      },
+      "suggestion": {
+        "title": "Tenho uma sugestão!",
+        "content": "Se você quiser sugerir uma nova função, alteração de algo, ou qualquer coisa desse tipo, você pode entrar no nosso [formulário de feedbacks](https://forms.gle/ceFMBMkvyUKwxpms7) e enviar sua sugestão."
+      },
+      "fork-project": {
+        "title": "Quero ajudar o projeto, como posso fazer isso?",
+        "content": "Se você programa e deseja me ajudar, você pode fazer um fork do [repositorio do projeto](http://github.com/feeeyli/multitwitch)."
+      }
+    }
   }
 }

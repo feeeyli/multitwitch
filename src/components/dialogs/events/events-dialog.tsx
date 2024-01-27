@@ -33,8 +33,6 @@ export function EventsDialog() {
     return now < eventEnd;
   }).sort((a, b) => (a.time < b.time ? -1 : a.time > b.time ? 1 : 0));
 
-  console.log("> futureEvents", futureEvents);
-
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -47,6 +45,11 @@ export function EventsDialog() {
           <DialogTitle>{t("title")}</DialogTitle>
           <DialogDescription>{t("description")}</DialogDescription>
         </DialogHeader>
+        {futureEvents.length === 0 && (
+          <p className="py-3 text-muted-foreground text-sm text-center">
+            {t("no-events")}
+          </p>
+        )}
         {futureEvents.length > 0 && (
           <>
             <NextEventCountdown event={futureEvents[0]} />

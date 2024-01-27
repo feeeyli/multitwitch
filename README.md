@@ -47,8 +47,8 @@
     - [ ] Header actions (_expand_, _mute_, _chat_, reload, remove, swap points)
     - [ ] Start muted
     - [ ] Move chats
-  - [ ] Faq
-    - [ ] Just a FAQ
+  - [x] Faq
+    - [x] Just a FAQ
 - [ ] Streams/chats
   - [ ] Move and resize streams
   - [ ] Swap points
