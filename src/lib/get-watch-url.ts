@@ -1,5 +1,6 @@
 import { GroupWithHideSchema } from "@/stores/selector-store";
 import { StreamerSchema } from "@/types/streamer.schema";
+import { includes } from "./includes";
 
 type GetWatchUrlParams = {
   streamers?: StreamerSchema[];
@@ -15,7 +16,16 @@ export function getWatchUrl({
   const url = new URLSearchParams();
 
   const filteredChats = chats.filter((chat) =>
-    streamers.some((s) => s.twitch_name === chat)
+    [
+      streamers,
+      groups.flatMap((group) =>
+        group.members.filter(
+          (m) => !includes(group.hided_members, "twitch_name", m.twitch_name)
+        )
+      ),
+    ]
+      .flat()
+      .some((s) => s.twitch_name === chat)
   );
 
   if (streamers.length > 0)

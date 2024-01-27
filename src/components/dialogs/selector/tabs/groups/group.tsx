@@ -49,10 +49,10 @@ export function Group(props: GroupProps) {
           <ContextMenuTrigger>
             <ToggleGroupItem
               value={props.group.simple_name}
-              className="h-auto pt-3 pb-2 flex-col max-w-[8.625rem] hover:bg-muted/40 gap-2"
+              className="h-auto pt-3 pb-2 flex-col max-w-[6.5rem] sm:max-w-[8.625rem] hover:bg-muted/40 gap-2"
               variant="default"
             >
-              <div className="size-28 flex items-center rounded-md overflow-hidden">
+              <div className="size-20 sm:size-28 flex items-center rounded-md overflow-hidden">
                 <picture className="pointer-events-none select-none flex flex-wrap justify-center">
                   {props.group.members.map((avatar) => (
                     <img

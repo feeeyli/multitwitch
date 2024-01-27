@@ -1,8 +1,8 @@
 ## Feature list
 
 - [ ] Dialogs
-  - [*] Selector
-    - [*] Get data from query
+  - [x] Selector
+    - [x] Get data from query
     ***
     - [x] Select streamer
     - [x] Favorite streamer
@@ -23,11 +23,11 @@
       - [x] Choose group name and slug
       - [x] Show pinned streamers on create group
       - [ ] \*Add custom skin heads to pinned streamer
-  - [ ] Organizer
-    - [ ] List streamers, groups and streamers in groups
-    - [ ] Enable/disable chats
-    - [ ] Remove streamer or group
-    - [ ] Hide members from groups
+  - [x] Manage
+    - [x] List streamers, groups and streamers in groups
+    - [x] Enable/disable chats
+    - [x] Remove streamer or group
+    - [x] Hide members from groups
   - [ ] Events
     - [ ] Countdown to next event
     - [ ] List all next events

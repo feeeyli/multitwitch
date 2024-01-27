@@ -21,7 +21,7 @@ type StreamerProps = {
 };
 
 const streamerVariants = cva(
-  "h-auto pt-3 pb-2 flex-col max-w-[8.625rem] hover:bg-muted/40 gap-2",
+  "h-auto pt-3 pb-2 flex-col max-w-[6.5rem] sm:max-w-[8.625rem] hover:bg-muted/40 gap-2",
   {
     variants: {
       is_live: {
@@ -54,7 +54,7 @@ export function Streamer(props: StreamerProps) {
             alt={t("avatar-alt", { name: props.streamer.display_name })}
             width={128}
             height={128}
-            className="size-28 rounded-md pointer-events-none select-none"
+            className="size-20 sm:size-28 rounded-md pointer-events-none select-none"
           />
           <span className="text-ellipsis overflow-x-hidden w-full">
             {props.streamer.display_name}

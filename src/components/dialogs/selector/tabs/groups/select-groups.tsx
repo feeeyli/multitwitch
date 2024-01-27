@@ -27,7 +27,7 @@ export function SelectGroups() {
         <Button
           variant="outline"
           size="sm"
-          className="flex items-center gap-2 px-2.5"
+          className="flex items-center gap-2 px-2.5 w-min"
         >
           {t("label")}
           <MousePointerSquareDashed size="1rem" />

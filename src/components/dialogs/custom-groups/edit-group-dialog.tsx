@@ -41,6 +41,7 @@ const createGroupFormSchema = z.object({
       z.object({
         display_name: z.string(),
         twitch_name: z.string(),
+        avatar_url: z.string().nullable(),
       })
     )
     .min(1),

@@ -6,6 +6,7 @@ export type GroupWithHideSchema = GroupSchema & {
   hided_members: {
     display_name: string;
     twitch_name: string;
+    avatar_url: string | null;
   }[];
 };
 

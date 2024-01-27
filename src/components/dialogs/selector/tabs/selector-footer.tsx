@@ -15,7 +15,7 @@ export function SelectorFooter() {
 
   return (
     <DialogFooter className="flex-col sm:flex-col items-end">
-      <p className="w-full text-sm">
+      <p className="w-full text-sm line-clamp-2 text-ellipsis">
         <span className="text-muted-foreground">
           {t("selected", {
             count:

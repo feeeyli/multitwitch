@@ -1,5 +1,6 @@
 import { useSettings } from "@/hooks/useSettings";
 import { cva } from "class-variance-authority";
+import { ManageDialog } from "./manage/manage-dialog";
 import { SelectorDialog } from "./selector/selector-dialog";
 
 const dialogsVariants = cva(
@@ -55,7 +56,7 @@ export function Dialogs() {
     >
       <section>
         <SelectorDialog />
-        <button className="w-10 h-9 bg-primary">2</button>
+        <ManageDialog />
         <button className="w-10 h-9 bg-primary">3</button>
       </section>
       <section>

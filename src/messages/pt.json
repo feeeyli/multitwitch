@@ -101,5 +101,13 @@
       "cancel": "Cancelar",
       "confirm": "Sim, excluir"
     }
+  },
+  "manage-dialog": {
+    "title": "Gerenciador",
+    "description": "Gerencie seus streamers, grupos e chats.",
+    "watch": "Assistir",
+    "streamers-title": "Streamers",
+    "groups-title": "Grupos",
+    "avatar-alt": "Avatar de {name}"
   }
 }

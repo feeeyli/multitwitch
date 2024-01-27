@@ -6,7 +6,7 @@ import { SelectGroups } from "./select-groups";
 export function GroupsTab() {
   return (
     <TabsContent value="groups">
-      <header className="w-full mb-3 flex gap-3">
+      <header className="w-full mb-3 flex sm:flex-row flex-col-reverse gap-3">
         <SelectGroups />
         <SearchBar />
       </header>

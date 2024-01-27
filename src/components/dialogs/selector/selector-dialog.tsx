@@ -14,7 +14,7 @@ import { env } from "@/env";
 import { useSearchParamsData } from "@/hooks/use-search-params-data";
 import useStore from "@/hooks/use-store";
 import { useSelectorStore } from "@/stores/selector-store";
-import { ArrowLeftRight } from "lucide-react";
+import { Tv } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 import { GroupsTab } from "./tabs/groups/groups-tab";
@@ -51,10 +51,10 @@ export function SelectorDialog() {
     >
       <DialogTrigger asChild>
         <Button size="dialog">
-          <ArrowLeftRight size="1rem" />
+          <Tv size="1rem" />
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-[50rem]">
+      <DialogContent className="max-w-[50rem] max-h-[90dvh]">
         <DialogHeader>
           <DialogTitle>{t("title")}</DialogTitle>
           <DialogDescription>

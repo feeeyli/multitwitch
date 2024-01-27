@@ -34,12 +34,12 @@ export function StreamersTab() {
 
   return (
     <TabsContent value="streamers">
-      <header className="w-full mb-3 flex gap-3">
+      <header className="w-full mb-3 flex sm:flex-row flex-col-reverse gap-3">
         {searchMode === "static" && (
-          <>
+          <div className="flex gap-3">
             <SelectStreamers StaticStreamers={searchResult.StaticStreamers} />
             <SortStreamers />
-          </>
+          </div>
         )}
         <SearchBar />
       </header>
