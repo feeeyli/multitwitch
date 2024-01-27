@@ -51,7 +51,7 @@
     --foreground: calc(var(--theme-hue) - 52) 20% 98%;
 
     --primary: var(--theme-hue) 32% 70%;
-    --primary-foreground: var(--theme-hue) 15% 12%;
+    --primary-foreground: calc(var(--theme-hue) - 52) 15% 12%;
 
     --secondary: var(--theme-hue) 27.9% 16.9%;
 
@@ -117,6 +117,7 @@
     --foreground: calc(var(--theme-hue) - 52) 20% 98%;
 
     --primary: var(--theme-hue) 32% 70%;
+    --primary-foreground: calc(var(--theme-hue) - 52) 15% 12%;
 
     --secondary: var(--theme-hue) 27.9% 16.9%;
 
@@ -129,7 +130,6 @@
 
     --card-foreground: var(--foreground);
     --popover-foreground: var(--foreground);
-    --primary-foreground: var(--foreground);
     --secondary-foreground: var(--foreground);
     --accent-foreground: var(--foreground);
     --destructive-foreground: var(--foreground);
@@ -183,6 +183,7 @@
     --foreground: calc(var(--theme-hue) - 52) 20% 98%;
 
     --primary: var(--theme-hue) 32% 70%;
+    --primary-foreground: calc(var(--theme-hue) - 52) 15% 12%;
 
     --secondary: var(--theme-hue) 27.9% 16.9%;
 
@@ -195,7 +196,6 @@
 
     --card-foreground: var(--foreground);
     --popover-foreground: var(--foreground);
-    --primary-foreground: var(--foreground);
     --secondary-foreground: var(--foreground);
     --accent-foreground: var(--foreground);
     --destructive-foreground: var(--foreground);
@@ -249,6 +249,7 @@
     --foreground: calc(var(--theme-hue) - 52) 20% 98%;
 
     --primary: var(--theme-hue) 32% 70%;
+    --primary-foreground: calc(var(--theme-hue) - 52) 15% 12%;
 
     --secondary: var(--theme-hue) 27.9% 16.9%;
 
@@ -261,7 +262,6 @@
 
     --card-foreground: var(--foreground);
     --popover-foreground: var(--foreground);
-    --primary-foreground: var(--foreground);
     --secondary-foreground: var(--foreground);
     --accent-foreground: var(--foreground);
     --destructive-foreground: var(--foreground);
