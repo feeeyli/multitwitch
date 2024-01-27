@@ -1,6 +1,6 @@
 "use client";
 
-import { useSettings } from "@/hooks/useSettings";
+import { useSettings } from "@/hooks/use-settings";
 import { cva } from "class-variance-authority";
 
 const streamsVariants = cva("flex-1", {
@@ -15,7 +15,7 @@ const streamsVariants = cva("flex-1", {
 });
 
 export function Streams() {
-  const [settings] = useSettings();
+  const { settings } = useSettings();
 
   return (
     <div

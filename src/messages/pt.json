@@ -117,7 +117,76 @@
     "event-started": "O evento já começou!",
     "no-events": "Nenhum evento programado!"
   },
-  "settings-dialog": {},
+  "settings-dialog": {
+    "title": "Configurações",
+    "description": "Customize o MultiQSMP da maneira que preferir.",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "form": {
+      "appearance": {
+        "title": "Aparência",
+        "theme": {
+          "label": "Tema",
+          "dark": "Escuro",
+          "light": "Claro",
+          "system": "Seguir tema do sistema"
+        },
+        "dialog-position": {
+          "label": "Posição dos menus",
+          "right": "Direita",
+          "bottom": "Baixo",
+          "left": "Esquerda"
+        },
+        "outro": {
+          "label": "Outro",
+          "hide-dialog": "Esconder menus."
+        }
+      },
+      "streamers": {
+        "title": "Streamers",
+        "streamers-avatar": {
+          "label": "Avatar dos streamers",
+          "twitch": "Perfil da Twitch",
+          "skin": "Skin do Minecraft",
+          "both": "Ambas"
+        },
+        "streamers-status": {
+          "label": "Status das lives",
+          "offline": "Mostrar se está offline.",
+          "noPlaying": "Mostrar se está jogando QSMP."
+        },
+        "outro": {
+          "label": "Outro",
+          "hide-offline": "Esconder streamers offlines.",
+          "hide-not-playing": "Esconder streamers sem jogar QSMP."
+        }
+      },
+      "streams": {
+        "title": "Lives",
+        "headers": {
+          "label": "Menus das lives",
+          "always-show": "Manter menu sempre aberto.",
+          "use-handle-as-header": "Manter menu sempre visível acima da live."
+        },
+        "header-items": {
+          "label": "Botões de ação rapida",
+          "actions-labels": {
+            "fullscreen": "Expandir live",
+            "mute": "Ativar/desativar som",
+            "chat": "Ativar/desativar chat",
+            "reload": "Recarregar live",
+            "remove-stream": "Remover live / Esconder Live",
+            "swap-points": "Pontos de troca"
+          }
+        },
+        "outro": {
+          "label": "Outro",
+          "start-muted": "Começar lives sem som.",
+          "movable-chat": "Movimentar e redimensionar chats."
+        }
+      }
+    }
+  },
   "faq-dialog": {
     "title": "FAQ",
     "description": "Ache a resposta pra algumas perguntas que você possa ter.",

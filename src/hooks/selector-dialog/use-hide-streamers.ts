@@ -1,16 +1,16 @@
 import { includes } from "@/lib/includes";
 import { StreamerSchema } from "@/types/streamer.schema";
-import { useSettings } from "../useSettings";
+import { useSettings } from "../use-settings";
 
 export function useHideStreamers(streamers: StreamerSchema[]) {
   const { selectedStreamers } = {
     selectedStreamers: { value: [] as StreamerSchema[] },
   };
-  const [
-    {
+  const {
+    settings: {
       streamers: { outro },
     },
-  ] = useSettings();
+  } = useSettings();
 
   const Streamers = streamers.filter((streamer) => {
     if (

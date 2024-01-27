@@ -1,9 +1,12 @@
-import { useSettings } from "@/hooks/useSettings";
+"use client";
+
+import { useSettings } from "@/hooks/use-settings";
 import { cva } from "class-variance-authority";
 import { EventsDialog } from "./events/events-dialog";
 import { FaqDialog } from "./faq/faq-dialog";
 import { ManageDialog } from "./manage/manage-dialog";
 import { SelectorDialog } from "./selector/selector-dialog";
+import { SettingsDialog } from "./settings/settings-dialog";
 
 const dialogsVariants = cva(
   "flex gap-6 absolute [&>section]:flex [&>section]:gap-2",
@@ -47,7 +50,7 @@ const dialogsVariants = cva(
 );
 
 export function Dialogs() {
-  const [settings] = useSettings();
+  const { settings } = useSettings();
 
   return (
     <div
@@ -62,7 +65,7 @@ export function Dialogs() {
         <EventsDialog />
       </section>
       <section>
-        <button className="w-10 h-9 bg-primary">4</button>
+        <SettingsDialog />
         <FaqDialog />
       </section>
       <section>
