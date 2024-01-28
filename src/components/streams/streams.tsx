@@ -2,6 +2,7 @@
 
 import { useSettings } from "@/hooks/use-settings";
 import { cva } from "class-variance-authority";
+import { StreamsGrid } from "./streams-grid";
 
 const streamsVariants = cva("flex-1", {
   variants: {
@@ -24,6 +25,8 @@ export function Streams() {
           ? "none"
           : settings.appearance.dialogTriggersPosition,
       })}
-    ></div>
+    >
+      <StreamsGrid />
+    </div>
   );
 }

@@ -34,19 +34,21 @@
       - [x] Show event date
       - [x] List all announcements tweets
   - [ ] Settings
-    - [ ] Theme (_dark_, light)
-    - [ ] Dialog position (_right_, bottom, left)
-    - [ ] Hide dialogs
+    - [x] Theme (_dark_, light)
+    - [x] Dialog position (_right_, bottom, left)
+    - [x] Hide dialogs
     ***
-    - [ ] Streamers avatar (_twitch profile_, Minecraft skin, both)
-    - [ ] Stream status (offline, playing)
-    - [ ] Hide streamers by status
+    - [x] Streamers avatar (_twitch profile_, Minecraft skin, both)
+    - [x] Stream status (offline, playing)
+    - [x] Hide streamers by status
     ***
-    - [ ] Keep header always opened
-    - [ ] Keep header above stream
-    - [ ] Header actions (_expand_, _mute_, _chat_, reload, remove, swap points)
-    - [ ] Start muted
-    - [ ] Move chats
+    - [x] Keep header always opened
+    - [x] Keep header above stream
+    - [x] Header actions (_expand_, _mute_, _chat_, reload, remove, swap points)
+    - [x] Start muted
+    - [x] Move chats
+    ***
+    - [ ] Implement settings
   - [x] Faq
     - [x] Just a FAQ
 - [ ] Streams/chats

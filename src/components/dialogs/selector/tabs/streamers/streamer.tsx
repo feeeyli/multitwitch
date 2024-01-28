@@ -4,6 +4,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Toggle } from "@/components/ui/toggle";
 import { ToggleGroupItem } from "@/components/ui/toggle-group";
+import { SKIN_HEAD } from "@/data/skin-heads";
+import { useSettings } from "@/hooks/use-settings";
 import useStore from "@/hooks/use-store";
 import { includes } from "@/lib/includes";
 import { useCustomDataStore } from "@/stores/custom-data-store";
@@ -21,13 +23,13 @@ type StreamerProps = {
 };
 
 const streamerVariants = cva(
-  "h-auto pt-3 pb-2 flex-col max-w-[6.5rem] sm:max-w-[8.625rem] hover:bg-muted/40 gap-2",
+  "h-auto pt-3 pb-2 flex-col max-w-[6.5rem] sm:max-w-[8.625rem] hover:bg-muted/60 gap-2",
   {
     variants: {
       is_live: {
         true: "data-[state=on]:text-primary hover:text-primary/60",
         false:
-          "data-[state=on]:text-primary/60 [&>img]:grayscale text-muted-foreground",
+          "data-[state=on]:text-primary/60 [&>img]:grayscale hover:text-muted-foreground/60 text-muted-foreground",
       },
     },
   }
@@ -37,6 +39,11 @@ const StreamerContext = createContext({} as StreamerSchema);
 
 export function Streamer(props: StreamerProps) {
   const t = useTranslations("selector-dialog.tabs.streamers-tab");
+  const {
+    settings: {
+      streamers: { streamersStatus, streamersAvatar },
+    },
+  } = useSettings();
 
   return (
     <StreamerContext.Provider value={props.streamer}>
@@ -45,17 +52,41 @@ export function Streamer(props: StreamerProps) {
         <ToggleGroupItem
           value={props.streamer.twitch_name}
           className={streamerVariants({
-            is_live: props.streamer.no_data ? true : props.streamer.is_live,
+            is_live:
+              (props.streamer.no_data ? true : props.streamer.is_live) ||
+              !streamersStatus.offline,
           })}
           variant="default"
         >
-          <img
-            src={props.streamer.avatar_url}
-            alt={t("avatar-alt", { name: props.streamer.display_name })}
-            width={128}
-            height={128}
-            className="size-20 sm:size-28 rounded-md pointer-events-none select-none"
-          />
+          <picture className="size-20 sm:size-28 relative">
+            <img
+              src={
+                streamersAvatar === "skin"
+                  ? SKIN_HEAD(
+                      props.streamer.twitch_name,
+                      props.streamer.avatar_url
+                    )
+                  : props.streamer.avatar_url
+              }
+              alt={t("avatar-alt", { name: props.streamer.display_name })}
+              width={128}
+              height={128}
+              className="size-20 sm:size-28 rounded-md pointer-events-none select-none"
+            />
+            {streamersAvatar === "both" &&
+              SKIN_HEAD(props.streamer.twitch_name, "") && (
+                <img
+                  src={SKIN_HEAD(props.streamer.twitch_name)}
+                  alt={t("avatar-alt", { name: props.streamer.display_name })}
+                  width={128}
+                  height={128}
+                  style={{
+                    imageRendering: "pixelated",
+                  }}
+                  className="size-8 pointer-events-none select-none absolute border-2 border-border bottom-1 right-1"
+                />
+              )}
+          </picture>
           <span className="text-ellipsis overflow-x-hidden w-full">
             {props.streamer.display_name}
           </span>
@@ -156,11 +187,18 @@ export function StreamerPinnedButton() {
 
 export function StreamerPlayingBadge() {
   const t = useTranslations("selector-dialog.tabs.streamers-tab");
+  const {
+    settings: {
+      streamers: { streamersStatus },
+    },
+  } = useSettings();
+
+  if (!streamersStatus.noPlaying) return null;
 
   return (
     <Badge
       variant="playing"
-      className="px-1.5 py-1.5 absolute top-1 right-1 cursor-help"
+      className="px-1.5 py-1.5 absolute top-1 right-1 cursor-help z-10"
       title={t("not-playing")}
     >
       <BadgeInfo size="1rem" />

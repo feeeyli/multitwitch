@@ -26,6 +26,11 @@ export function GroupsList() {
     <section>
       <h3 className="text-center">{t("groups-title")}</h3>
       <div className="divide-y">
+        {manage.groups.length === 0 && (
+          <p className="text-sm text-muted-foreground text-center p-3">
+            {t("no-groups")}
+          </p>
+        )}
         {manage.groups.map((group) => (
           <Group key={group.simple_name} group={group} />
         ))}
@@ -42,8 +47,8 @@ function Group(props: GroupProps) {
   const manage = useManageStore((state) => state);
 
   return (
-    <section className="py-3 flex flex-col gap-3">
-      <header className="flex-grow flex gap-3 items-center">
+    <section className="flex flex-col">
+      <header className="flex-grow flex gap-3 items-center hover:bg-secondary/30 rounded-md py-3 px-1.5 cursor-default">
         <Button
           size="icon"
           className="h-7 w-7"
@@ -58,7 +63,7 @@ function Group(props: GroupProps) {
           {props.group.display_name}
         </span>
       </header>
-      <div className="grid grid-cols-[2rem_1fr]">
+      <div className="grid grid-cols-[2.5rem_1fr]">
         <Separator
           orientation="vertical"
           className="justify-self-center bg-primary"
@@ -89,7 +94,7 @@ function GroupMember(props: GroupMemberProps) {
   return (
     <li
       data-hided={props.member.hided}
-      className="py-2 px-1.5 flex gap-3 items-center hover:bg-secondary/30 rounded-md group"
+      className="py-2 px-1.5 flex gap-3 items-center hover:bg-secondary/30 rounded-md group cursor-default"
     >
       <Toggle
         size="icon"

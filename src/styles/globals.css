@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import "./themes.css";
+@import "./react-grid-layout.css";
 
 @layer base {
   * {

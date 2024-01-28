@@ -21,10 +21,7 @@ export function useHideStreamers(streamers: StreamerSchema[]) {
 
     if (
       (outro.hideOffline && !streamer.is_live) ||
-      (outro.hideNotPlaying &&
-        streamer.is_live &&
-        !streamer.is_playing &&
-        streamer.default_streamer)
+      (outro.hideNotPlaying && streamer.is_live && !streamer.is_playing)
     )
       return false;
 

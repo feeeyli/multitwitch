@@ -5,7 +5,7 @@ import { useCustomDataStore } from "@/stores/custom-data-store";
 import { GroupWithHideSchema } from "@/stores/selector-store";
 import { GroupSchema } from "@/types/groups.schema";
 import { StreamerSchema } from "@/types/streamer.schema";
-import { useSearchParams } from "next/navigation";
+import { parseAsArrayOf, parseAsString, useQueryState } from "nuqs";
 import useStore from "./use-store";
 
 export function useSearchParamsData(): {
@@ -14,7 +14,24 @@ export function useSearchParamsData(): {
   chats: string[];
   isLoading: boolean;
 } {
-  const searchParams = useSearchParams();
+  const [queryStreamers] = useQueryState(
+    "streamers",
+    parseAsArrayOf(parseAsString, "/")
+      .withDefault([])
+      .withOptions({ history: "push" })
+  );
+  const [queryGroups] = useQueryState(
+    "groups",
+    parseAsArrayOf(parseAsString, "/")
+      .withDefault([])
+      .withOptions({ history: "push" })
+  );
+  const [queryChats] = useQueryState(
+    "chats",
+    parseAsArrayOf(parseAsString, "/")
+      .withDefault([])
+      .withOptions({ history: "push" })
+  );
   const customData = useStore(useCustomDataStore, (state) => state);
 
   if (typeof customData === "undefined")
@@ -26,9 +43,9 @@ export function useSearchParamsData(): {
     };
 
   const query = {
-    streamers: searchParams.get("streamers")?.split("/") ?? [],
-    groups: searchParams.get("groups")?.split("/") ?? [],
-    chats: searchParams.get("chats")?.split("/") ?? [],
+    streamers: queryStreamers,
+    groups: queryGroups,
+    chats: queryChats,
   };
 
   /*#region Groups

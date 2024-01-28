@@ -90,9 +90,7 @@ export function SettingsDialog() {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>{t("title")}</DialogTitle>
-          <DialogDescription>
-            {t("description")} {JSON.stringify(form.formState.errors)}
-          </DialogDescription>
+          <DialogDescription>{t("description")}</DialogDescription>
         </DialogHeader>
         {typeof settings !== "undefined" && (
           <Form {...form}>
@@ -158,16 +156,16 @@ export function SettingsDialog() {
                     label={t("form.streamers.streamers-avatar.label")}
                     items={[
                       {
+                        label: t("form.streamers.streamers-avatar.both"),
+                        value: "both",
+                      },
+                      {
                         label: t("form.streamers.streamers-avatar.twitch"),
                         value: "twitch",
                       },
                       {
                         label: t("form.streamers.streamers-avatar.skin"),
                         value: "skin",
-                      },
-                      {
-                        label: t("form.streamers.streamers-avatar.both"),
-                        value: "both",
                       },
                     ]}
                   />

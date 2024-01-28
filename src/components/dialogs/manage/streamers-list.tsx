@@ -14,6 +14,11 @@ export function StreamersList() {
     <section>
       <h3 className="text-center">{t("streamers-title")}</h3>
       <ul className="divide-y">
+        {manage.streamers.length === 0 && (
+          <p className="text-sm text-muted-foreground text-center p-3">
+            {t("no-streamers")}
+          </p>
+        )}
         {manage.streamers.map((streamer) => (
           <Streamer key={streamer.twitch_name} streamer={streamer} />
         ))}
@@ -31,7 +36,7 @@ function Streamer(props: StreamerProps) {
   const manage = useManageStore((state) => state);
 
   return (
-    <li className="py-3 px-1.5 flex gap-3 items-center hover:bg-secondary/30 rounded-md">
+    <li className="py-3 px-1.5 flex gap-3 items-center hover:bg-secondary/30 rounded-md cursor-default">
       <Button
         size="icon"
         className="h-7 w-7"

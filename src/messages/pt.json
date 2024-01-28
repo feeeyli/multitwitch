@@ -107,7 +107,9 @@
     "description": "Gerencie seus streamers, grupos e chats.",
     "watch": "Assistir",
     "streamers-title": "Streamers",
+    "no-streamers": "Nenhum streamer selecionado.",
     "groups-title": "Grupos",
+    "no-groups": "Nenhum grupo selecionado.",
     "avatar-alt": "Avatar de {name}"
   },
   "events-dialog": {
@@ -215,6 +217,18 @@
         "title": "Quero ajudar o projeto, como posso fazer isso?",
         "content": "Se você programa e deseja me ajudar, você pode fazer um fork do [repositorio do projeto](http://github.com/feeeyli/multitwitch)."
       }
+    }
+  },
+  "streams": {
+    "stream-header": {
+      "sound": "{active, select, false {Ativar som} other {Desativar som}}",
+      "full-screen": "{active, select, false {Expandir} other {Reduzir}}",
+      "chat": "{active, select, false {Abrir chat} other {Fechar chat}}",
+      "reload": "Recarregar live",
+      "remove": "{type, select, streamer {Remover live} other {Esconder live}}",
+      "add-swap-point": "Criar ponto de troca",
+      "remove-swap-point": "Remover ponto de troca",
+      "goto-swap-point": "Ir para ponto de troca { number } ({ name })"
     }
   }
 }

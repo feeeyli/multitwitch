@@ -17,7 +17,7 @@ export const useSettingsStore = create<SettingsStore>()(
           hideDialog: false,
         },
         streamers: {
-          streamersAvatar: "twitch",
+          streamersAvatar: "both",
           streamersStatus: {
             offline: true,
             noPlaying: true,
