@@ -28,9 +28,7 @@ export function useSearchParamsData(): {
   );
   const [queryChats] = useQueryState(
     "chats",
-    parseAsArrayOf(parseAsString, "/")
-      .withDefault([])
-      .withOptions({ history: "push" })
+    parseAsArrayOf(parseAsString, "/").withDefault([])
   );
   const customData = useStore(useCustomDataStore, (state) => state);
 

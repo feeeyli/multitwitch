@@ -1,4 +1,5 @@
 import { Toggle } from "@/components/ui/toggle";
+import { Button as ToolbarButton } from "@radix-ui/react-toolbar";
 import { EyeOff, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { parseAsArrayOf, parseAsString, useQueryState } from "nuqs";
@@ -10,21 +11,15 @@ export function Remove() {
   const { stream } = useStream();
   const [streamers, setStreamers] = useQueryState(
     "streamers",
-    parseAsArrayOf(parseAsString, "/")
-      .withDefault([])
-      .withOptions({ history: "push" })
+    parseAsArrayOf(parseAsString, "/").withDefault([])
   );
   const [groups, setGroups] = useQueryState(
     "groups",
-    parseAsArrayOf(parseAsString, "/")
-      .withDefault([])
-      .withOptions({ history: "push" })
+    parseAsArrayOf(parseAsString, "/").withDefault([])
   );
   const [chats, setChats] = useQueryState(
     "chats",
-    parseAsArrayOf(parseAsString, "/")
-      .withDefault([])
-      .withOptions({ history: "push" })
+    parseAsArrayOf(parseAsString, "/").withDefault([])
   );
 
   const handleRemove = useCallback(() => {
@@ -60,14 +55,16 @@ export function Remove() {
   ]);
 
   return (
-    <Toggle
-      variant="ghost"
-      size="xs"
-      onClick={handleRemove}
-      title={t("remove", { type: stream.group_name ? "group" : "streamer" })}
-    >
-      {!stream.group_name && <X size="1rem" />}
-      {stream.group_name && <EyeOff size="1rem" />}
-    </Toggle>
+    <ToolbarButton asChild>
+      <Toggle
+        variant="ghost"
+        size="xs"
+        onClick={handleRemove}
+        title={t("remove", { type: stream.group_name ? "group" : "streamer" })}
+      >
+        {!stream.group_name && <X size="1rem" />}
+        {stream.group_name && <EyeOff size="1rem" />}
+      </Toggle>
+    </ToolbarButton>
   );
 }

@@ -1,4 +1,3 @@
-import { SettingsSchema } from "@/types/settings.schema";
 import { Layout } from "react-grid-layout";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
@@ -9,30 +8,21 @@ function sort(arr: string[] | undefined) {
   return arr.sort((a, b) => a.localeCompare(b));
 }
 
-export function getKey<T = string>() {
-  const sett = localStorage.getItem("@MultiTwitch/settings");
-
-  if (!sett) return undefined;
-
-  const {
-    state: { settings },
-  } = JSON.parse(sett) as { state: { settings: SettingsSchema } };
-
+export function getKey<T = string>(ignoreChats?: boolean) {
   const searchParams = new URLSearchParams(location.search);
 
   const streamers = sort(searchParams.get("streamers")?.split("/"));
   const groups = sort(searchParams.get("groups")?.split("/"));
   const chats = sort(searchParams.get("chats")?.split("/"));
 
-  return `${streamers?.join("/") || ""}${streamers && groups ? "/" : ""}${
+  return (`${streamers?.join("/") || ""}${streamers && groups ? "/" : ""}${
     groups?.join("/") || ""
-  }${chats && (groups || streamers) ? "/" : ""}${
-    chats && settings.streams.movableChat
-      ? `$${chats?.join("$")}`
-      : chats
-      ? "$chats$"
-      : ""
-  }` as T;
+  }` +
+    (ignoreChats
+      ? ""
+      : `${chats && (groups || streamers) ? "/" : ""}${
+          chats ? `$${chats?.join("$")}` : ""
+        }`)) as T;
 }
 
 type SetFunc = (
@@ -48,7 +38,7 @@ type SetFunc = (
 const actions = {
   get(key: keyof UseLayoutStorageStore, getFunc: () => UseLayoutStorageStore) {
     const item = getFunc()[key];
-    const urlKey = getKey<keyof typeof item>();
+    const urlKey = getKey<keyof typeof item>(key === "swapPoints");
 
     if (!urlKey || !item[urlKey]) return [];
 
@@ -61,7 +51,7 @@ const actions = {
     getFunc: () => UseLayoutStorageStore
   ) {
     const item = getFunc()[key];
-    const urlKey = getKey<keyof typeof item>();
+    const urlKey = getKey<keyof typeof item>(key === "swapPoints");
 
     if (!urlKey) return;
 
@@ -79,27 +69,47 @@ const actions = {
     getFunc: () => UseLayoutStorageStore
   ) {
     const item = getFunc()[key];
-    const urlKey = getKey<keyof typeof item>();
+    const urlKey = getKey<keyof typeof item>(key === "swapPoints");
 
     if (!urlKey) return;
+
+    const result = (item[urlKey] as T[]).filter((i) => i !== value);
+
+    if (result.length === 0) {
+      return setFunc({
+        [key]: {
+          ...item,
+          [urlKey]: undefined,
+        },
+      });
+    }
 
     setFunc({
       [key]: {
         ...item,
-        [urlKey]: (item[urlKey] as T[]).filter((i) => i !== value),
+        [urlKey]: result,
       },
     });
   },
   set<T>(
     key: keyof UseLayoutStorageStore,
-    value: T,
+    value: T[],
     setFunc: SetFunc,
     getFunc: () => UseLayoutStorageStore
   ) {
     const item = getFunc()[key];
-    const urlKey = getKey<keyof typeof item>();
+    const urlKey = getKey<keyof typeof item>(key === "swapPoints");
 
     if (!urlKey) return;
+
+    if (value.length === 0) {
+      return setFunc({
+        [key]: {
+          ...item,
+          [urlKey]: undefined,
+        },
+      });
+    }
 
     setFunc({ [key]: { ...getFunc()[key], [urlKey]: value } });
   },
@@ -109,13 +119,14 @@ type UseLayoutStorageStore = {
   layout: { [key: string]: Layout[] };
   swapPoints: { [key: string]: string[] };
 
-  getLayout: () => string[];
+  getLayout: () => Layout[];
   setLayout: (value: Layout[]) => void;
 
   getSwapPoints: () => string[];
   addSwapPoint: (value: string) => void;
   removeSwapPoint: (value: string) => void;
   setSwapPoints: (value: string[]) => void;
+  swapStreams: (layout: Layout[], destiny: string, origin: string) => Layout[];
 };
 
 export const useLayoutStorageStore = create<UseLayoutStorageStore>()(
@@ -133,6 +144,34 @@ export const useLayoutStorageStore = create<UseLayoutStorageStore>()(
       },
       setSwapPoints: (value) => {
         actions.set("swapPoints", value, set, get);
+      },
+      swapStreams(layout, destiny, origin) {
+        // swap the item in 'layout' that 'i' is destiny with the item in 'layout' that 'i' is origin
+        const updatedLayout = layout.reduce((acc, item) => {
+          if (item.i === destiny) {
+            acc.push({ ...item, i: origin });
+          } else if (item.i === origin) {
+            acc.push({ ...item, i: destiny });
+          } else {
+            acc.push(item);
+          }
+          return acc;
+        }, [] as Layout[]);
+
+        const updatedSwapPoints = get()
+          .getSwapPoints()
+          .reduce((acc, item) => {
+            if (item === destiny) {
+              acc.push(origin);
+            } else {
+              acc.push(item);
+            }
+            return acc;
+          }, [] as string[]);
+
+        actions.set("swapPoints", updatedSwapPoints, set, get);
+
+        return updatedLayout;
       },
 
       getLayout: () => actions.get("layout", get),

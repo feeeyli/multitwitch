@@ -1,4 +1,5 @@
 import { Toggle } from "@/components/ui/toggle";
+import { Button as ToolbarButton } from "@radix-ui/react-toolbar";
 import { useAnimate } from "framer-motion";
 import { RefreshCcw } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -10,7 +11,7 @@ export function Reload() {
   const [scope, animate] = useAnimate();
 
   return (
-    <>
+    <ToolbarButton asChild>
       <Toggle
         variant="ghost"
         size="xs"
@@ -28,6 +29,6 @@ export function Reload() {
       >
         <RefreshCcw size="1rem" />
       </Toggle>
-    </>
+    </ToolbarButton>
   );
 }

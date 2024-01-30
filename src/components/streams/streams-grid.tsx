@@ -4,9 +4,22 @@ import { useStreamsList } from "@/hooks/streams/use-streams-list";
 import useStore from "@/hooks/use-store";
 import { useLayoutStorageStore } from "@/stores/layout-storage-store";
 import { useMemo } from "react";
-import RGL, { WidthProvider } from "react-grid-layout";
-import { useElementSize, useMediaQuery } from "usehooks-ts";
+import RGL, { Layout, WidthProvider } from "react-grid-layout";
+import { useMediaQuery } from "usehooks-ts";
 import { Stream } from "./stream/stream";
+
+const compareLayouts = (arr1: Layout[], arr2: Layout[]): boolean =>
+  arr1.length === arr2.length &&
+  arr1.every((item1) =>
+    arr2.some(
+      (item2) =>
+        item1.i === item2.i &&
+        item1.x === item2.x &&
+        item1.y === item2.y &&
+        item1.w === item2.w &&
+        item1.h === item2.h
+    )
+  );
 
 export function StreamsGrid() {
   const isDesktop = !useMediaQuery("(max-width: 640px)");
@@ -14,23 +27,39 @@ export function StreamsGrid() {
   const layoutStorage = useStore(useLayoutStorageStore, (state) => state);
   const streamsList = useStreamsList();
   const { columns, rows } = useGridSize(streamsList.length, isDesktop);
-  const [containerRef, containerSize] = useElementSize();
   const presets = useLayoutPresets(
     columns,
     rows,
-    Math.ceil(containerSize.height / 36 / rows) * rows
+    Math.ceil(window.innerHeight / 36 / rows) * rows
   );
+
+  const initialLayout = presets.tiles(presets.generateBlankLayout(streamsList));
 
   if (!layoutStorage) return null;
 
+  const layout =
+    layoutStorage.getLayout().length > 0
+      ? layoutStorage.getLayout()
+      : initialLayout;
+
   return (
-    <div ref={containerRef} className="h-full">
+    <div className="h-full">
       <ReactGridLayout
-        layout={presets.tiles(presets.generateBlankLayout(streamsList))}
+        layout={layout}
+        onLayoutChange={(lay) => {
+          if (
+            lay.every((item) => item.h === 0 && item.y === 0) ||
+            lay.some((item) => item.h === 1 && item.w === 1) ||
+            compareLayouts(lay, initialLayout)
+          )
+            return;
+
+          layoutStorage.setLayout(lay);
+        }}
         cols={10 * columns}
         rowHeight={
-          containerSize.height /
-            (Math.ceil(containerSize.height / 36 / rows) * rows) -
+          window.innerHeight /
+            (Math.ceil(window.innerHeight / 36 / rows) * rows) -
           4.2
         }
         resizeHandles={["sw", "se"]}
@@ -43,7 +72,7 @@ export function StreamsGrid() {
               className="rounded-md overflow-hidden flex flex-col"
               key={stream.twitch_name + (stream.is_chat ? "-chat" : "")}
             >
-              <Stream stream={stream} />
+              <Stream stream={stream} layout={layout} />
             </div>
           );
         })}

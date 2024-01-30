@@ -29,7 +29,7 @@ const streamerVariants = cva(
       is_live: {
         true: "data-[state=on]:text-primary hover:text-primary/60",
         false:
-          "data-[state=on]:text-primary/60 [&>img]:grayscale hover:text-muted-foreground/60 text-muted-foreground",
+          "data-[state=on]:text-primary/60 [&>picture>img]:grayscale hover:text-muted-foreground/60 text-muted-foreground",
       },
     },
   }
@@ -53,8 +53,8 @@ export function Streamer(props: StreamerProps) {
           value={props.streamer.twitch_name}
           className={streamerVariants({
             is_live:
-              (props.streamer.no_data ? true : props.streamer.is_live) ||
-              !streamersStatus.offline,
+              !streamersStatus.offline ||
+              (props.streamer.no_data ? true : props.streamer.is_live),
           })}
           variant="default"
         >

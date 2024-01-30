@@ -174,7 +174,7 @@
           "label": "Botões de ação rapida",
           "actions-labels": {
             "fullscreen": "Expandir live",
-            "mute": "Ativar/desativar som",
+            "sound": "Ativar/desativar som",
             "chat": "Ativar/desativar chat",
             "reload": "Recarregar live",
             "remove-stream": "Remover live / Esconder Live",
@@ -220,15 +220,23 @@
     }
   },
   "streams": {
+    "no-streams": "Parece que você ainda não escolheu nenhuma live. <br></br>Clique no botão \"<icon></icon>\" á direita e comece a assistir!",
     "stream-header": {
+      "label": "Ações rapidas",
       "sound": "{active, select, false {Ativar som} other {Desativar som}}",
       "full-screen": "{active, select, false {Expandir} other {Reduzir}}",
       "chat": "{active, select, false {Abrir chat} other {Fechar chat}}",
       "reload": "Recarregar live",
       "remove": "{type, select, streamer {Remover live} other {Esconder live}}",
-      "add-swap-point": "Criar ponto de troca",
-      "remove-swap-point": "Remover ponto de troca",
+      "toggle-swap-point": "{active, select, false {Criar ponto de troca} other {Remover ponto de troca}}",
+      "swap-points": "Pontos de troca",
       "goto-swap-point": "Ir para ponto de troca { number } ({ name })"
     }
+  },
+  "preset-layouts": {
+    "one-focus": "1 foco",
+    "two-focus": "2 focos",
+    "four-focus": "4 foco",
+    "reset": "Resetar"
   }
 }

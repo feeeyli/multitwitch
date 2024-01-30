@@ -1,6 +1,5 @@
 import { includes } from "@/lib/includes";
 import { useSearchParamsData } from "../use-search-params-data";
-import { useSettings } from "../use-settings";
 
 export type StreamSchema = {
   twitch_name: string;
@@ -9,11 +8,6 @@ export type StreamSchema = {
 };
 
 export function useStreamsList() {
-  const {
-    settings: {
-      streams: { movableChat },
-    },
-  } = useSettings();
   const { streamers, groups, chats } = useSearchParamsData();
 
   const mergedStreams: StreamSchema[] = Array.from([
@@ -52,7 +46,7 @@ export function useStreamsList() {
 
   const listWithChat: StreamSchema[] = [
     ...mergedStreamsWithoutDuplicates,
-    ...(movableChat ? chats : []).map((c) => ({
+    ...chats.map((c) => ({
       twitch_name: c,
       group_name: undefined,
       is_chat: true,

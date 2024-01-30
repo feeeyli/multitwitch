@@ -1,6 +1,4 @@
-import { useLayoutStorageStore } from "@/stores/layout-storage-store";
 import { Layout } from "react-grid-layout";
-import useStore from "../use-store";
 
 function split(arr: Layout[], perChunk: number): Layout[][] {
   return arr.reduce((all: Layout[][], one, i) => {
@@ -25,8 +23,6 @@ export function useLayoutPresets(
   tiles: (layout: Layout[]) => Layout[];
   generateBlankLayout: (list: Streams) => Layout[];
 } {
-  const layoutStorage = useStore(useLayoutStorageStore, (state) => state);
-
   function generateBlankLayout(list: Streams) {
     return list.map((stream) => ({
       i: stream.twitch_name + (stream.is_chat ? "-chat" : ""),
@@ -40,8 +36,6 @@ export function useLayoutPresets(
   }
 
   function focus(layout: Layout[], focusedAmount: 1 | 2 | 4 = 1) {
-    layout = layout.sort((a, b) => parseFloat(a.i) - parseFloat(b.i));
-
     const focused = layout.slice(0, focusedAmount);
     const layRows = split(layout.slice(focusedAmount), 6);
 
@@ -53,8 +47,6 @@ export function useLayoutPresets(
       2: { w: 0.5, h: 1 },
       4: { w: 0.5, h: 0.5 },
     };
-
-    // if (layoutStorage) layoutStorage.setSwapPoints(focused.map((_, i) => i));
 
     return [
       focused.map((focus, i) => {
@@ -75,13 +67,14 @@ export function useLayoutPresets(
 
         return row.map((item, i) => {
           const w = Math.ceil((cols * 10) / row.length);
+          const width = i > row.length - diff - 1 ? w - 1 : w;
 
           return {
             ...item,
             h: unfocusedHeight,
             y: unfocusedHeight * focusedAmount * (ii + 1),
-            w: i > row.length - diff - 1 ? w - 1 : w,
-            x: w * i,
+            w: width,
+            x: width * i,
           };
         });
       }),

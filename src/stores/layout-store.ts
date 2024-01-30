@@ -6,7 +6,7 @@ type UseLayoutStore = {
   setLayout: (value: Layout[]) => void;
 };
 
-export const useLayoutStore = create<UseLayoutStore>((set) => ({
+export const useLayoutStore = create<UseLayoutStore>((set, get) => ({
   layout: [],
   setLayout: (value) => {
     set({ layout: value });

@@ -33,26 +33,26 @@
     - [x] List all next events
       - [x] Show event date
       - [x] List all announcements tweets
-  - [ ] Settings
-    - [x] Theme (_dark_, light)
-    - [x] Dialog position (_right_, bottom, left)
-    - [x] Hide dialogs
+  - [x] Settings
+    - [x] \*Theme (_dark_, light)
+    - [x] \*Dialog position (_right_, bottom, left)
+    - [x] \*Hide dialogs
     ***
-    - [x] Streamers avatar (_twitch profile_, Minecraft skin, both)
-    - [x] Stream status (offline, playing)
-    - [x] Hide streamers by status
+    - [x] \*Streamers avatar (_twitch profile_, Minecraft skin, both)
+    - [x] \*Stream status (offline, playing)
+    - [x] \*Hide streamers by status
     ***
-    - [x] Keep header always opened
-    - [x] Keep header above stream
-    - [x] Header actions (_expand_, _mute_, _chat_, reload, remove, swap points)
-    - [x] Start muted
-    - [x] Move chats
+    - [x] \*Header actions (_expand_, _mute_, _chat_, reload, remove, swap points)
+    - [x] \*Start muted
     ***
-    - [ ] Implement settings
+    - [x] Implement settings
   - [x] Faq
     - [x] Just a FAQ
-- [ ] Streams/chats
-  - [ ] Move and resize streams
-  - [ ] Swap points
-  - [ ] Default layouts
-  - [ ] Resize or move chats
+  - [ ] Welcome
+    - [ ] Dialogs resumes
+    - [ ] Tour in all features
+- [x] Streams/chats
+  - [x] Move and resize streams
+  - [x] Swap points
+  - [x] Default layouts
+  - [x] Resize or move chats

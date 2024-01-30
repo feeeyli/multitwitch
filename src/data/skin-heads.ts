@@ -1,9 +1,10 @@
 import { env } from "@/env";
+import { FROGG_SKIN_HEADS } from "./skin-heads/frogg";
 import { QSMP_SKIN_HEADS } from "./skin-heads/qsmp";
 
 const skinHeadsVariants = {
   qsmp: QSMP_SKIN_HEADS,
-  frogg: {},
+  frogg: FROGG_SKIN_HEADS,
   purgatory: {},
   twitch: {},
 };

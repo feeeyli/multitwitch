@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const headerItemsNames = z.enum([
-  "mute",
+  "sound",
   "fullscreen",
   "chat",
   "reload",
@@ -27,10 +27,7 @@ export const settingsSchema = z.object({
     }),
   }),
   streams: z.object({
-    alwaysShowHeader: z.boolean(),
     headerItems: z.array(headerItemsNames),
-    movableChat: z.boolean(),
-    useHandleAsHeader: z.boolean(),
     startMuted: z.boolean(),
   }),
 });

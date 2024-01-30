@@ -29,7 +29,7 @@ export const useSettingsStore = create<SettingsStore>()(
         },
         streams: {
           alwaysShowHeader: false,
-          headerItems: ["mute", "fullscreen", "chat", "swap-points"],
+          headerItems: ["sound", "fullscreen", "chat", "swap-points"],
           startMuted: true,
           movableChat: false,
           useHandleAsHeader: false,

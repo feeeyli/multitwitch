@@ -1,6 +1,33 @@
-import { IconProps } from '..';
+import { IconProps } from "..";
 
 const iconVariants = [
+  ({ className, size }: IconProps) => (
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      key="swap-1"
+    >
+      <path
+        d="M2 6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2h-4"
+        stroke="#fff"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5.5 9.5L3 12l2.5 2.5M9.5 21l2.5-2.5L9.5 16M3 12h9M12 18.5H3"
+        stroke="#fff"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
   ({ className, size }: IconProps) => (
     <svg
       className={className}

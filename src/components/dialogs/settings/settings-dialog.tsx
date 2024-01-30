@@ -43,7 +43,7 @@ const headerItems: {
   hidden?: boolean;
 }[] = [
   { value: "fullscreen", icon: <Expand size="1rem" /> },
-  { value: "mute", icon: <Volume2 size="1rem" /> },
+  { value: "sound", icon: <Volume2 size="1rem" /> },
   { value: "chat", icon: <MessageSquare size="1rem" /> },
   { value: "reload", icon: <RefreshCcw size="1rem" /> },
   { value: "remove-stream", icon: <X size="1rem" /> },
@@ -206,21 +206,6 @@ export function SettingsDialog() {
                   </h3>
                   <div className="space-y-2">
                     <span className="text-sm font-medium leading-none">
-                      {t("form.streams.headers.label")}
-                    </span>
-                    <FormCheckbox
-                      form={form}
-                      label={t("form.streams.headers.always-show")}
-                      name="streams.alwaysShowHeader"
-                    />
-                    <FormCheckbox
-                      form={form}
-                      label={t("form.streams.headers.use-handle-as-header")}
-                      name="streams.useHandleAsHeader"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <span className="text-sm font-medium leading-none">
                       {t("form.streams.header-items.label")}
                     </span>
                     <FormToggleGroup
@@ -245,11 +230,6 @@ export function SettingsDialog() {
                       form={form}
                       label={t("form.streams.outro.start-muted")}
                       name="streams.startMuted"
-                    />
-                    <FormCheckbox
-                      form={form}
-                      label={t("form.streams.outro.movable-chat")}
-                      name="streams.movableChat"
                     />
                   </div>
                 </section>

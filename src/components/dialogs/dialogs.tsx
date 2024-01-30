@@ -2,6 +2,7 @@
 
 import { useSettings } from "@/hooks/use-settings";
 import { cva } from "class-variance-authority";
+import { LayoutPresets } from "../streams/layout-presets";
 import { EventsDialog } from "./events/events-dialog";
 import { FaqDialog } from "./faq/faq-dialog";
 import { ManageDialog } from "./manage/manage-dialog";
@@ -69,7 +70,7 @@ export function Dialogs() {
         <FaqDialog />
       </section>
       <section>
-        <button className="w-10 h-9 bg-primary">6</button>
+        <LayoutPresets />
       </section>
     </div>
   );

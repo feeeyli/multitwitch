@@ -1,6 +1,9 @@
 import { StreamSchema } from "@/hooks/streams/use-streams-list";
+import { useSettings } from "@/hooks/use-settings";
 import { createContext, useContext, useState } from "react";
+import { Layout } from "react-grid-layout";
 import { StreamHeader } from "./stream-header";
+import { StreamPlayer } from "./stream-player";
 
 type StreamContextSchema = {
   sound: boolean;
@@ -12,20 +15,22 @@ type StreamContextSchema = {
   refresh: () => void;
 
   stream: StreamSchema;
+  layout: Layout[];
 };
 
 const StreamContext = createContext({} as StreamContextSchema);
 
 export const useStream = () => useContext(StreamContext);
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 type StreamProps = {
   stream: StreamSchema;
+  layout: Layout[];
 };
 
 export function Stream(props: StreamProps) {
+  const { settings } = useSettings();
   const [streamsControls, setStreamsControls] = useState({
-    sound: false,
+    sound: !settings.streams.startMuted,
     fullScreen: false,
     refreshKey: 0,
   });
@@ -57,13 +62,15 @@ export function Stream(props: StreamProps) {
         ...streamsControls,
         ...streamsControlsActions,
         stream: props.stream,
+        layout: props.layout,
       }}
     >
       <StreamHeader />
-      <div className="flex-grow bg-red-950 p-4">
-        <pre>
+      <div className="flex-grow bg-background">
+        {/* <pre>
           {JSON.stringify({ ...props.stream, ...streamsControls }, null, 2)}
-        </pre>
+        </pre> */}
+        <StreamPlayer />
       </div>
     </StreamContext.Provider>
   );
