@@ -75,7 +75,7 @@ export function StreamersList({
         {searchMode === "static" &&
           env.APP_VARIANT === "twitch" &&
           StaticStreamers.length === 0 && (
-            <p className="text-muted-foreground flex gap-2 items-center justify-center max-w-2xl text-center w-[90%] h-full p-6 text-balance">
+            <p className="text-muted-foreground flex gap-2 items-center justify-center max-w-2xl text-center w-[90%] h-full px-6 py-8 text-balance text-sm">
               {t.rich("no-pinned-streamers", {
                 br: () => <br />,
               })}

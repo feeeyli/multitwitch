@@ -27,6 +27,8 @@ export function LayoutPresets() {
   );
   const layoutStorage = useStore(useLayoutStorageStore, (state) => state);
 
+  if (streamsList.length === 0) return null;
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

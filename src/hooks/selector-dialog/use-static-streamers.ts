@@ -40,15 +40,18 @@ export function useStaticStreamers(): {
       if (
         typeof customData?.pinnedStreamers === "undefined" ||
         searchMode === "twitch" ||
-        isLoadingSearchParams
+        isLoadingSearchParams ||
+        NoDataStreamers.length === 0
       )
         return [];
 
+      const query = NoDataStreamers.map((streamer) => streamer.twitch_name)
+        .join("/")
+        .toLocaleLowerCase();
+
       const { data } = await axios.get<StreamerSchema[]>("/api/streamers", {
         params: {
-          query: NoDataStreamers.map((streamer) => streamer.twitch_name)
-            .join("/")
-            .toLocaleLowerCase(),
+          query,
         },
       });
       return data;
@@ -68,5 +71,8 @@ export function useStaticStreamers(): {
       ? NoDataStreamers
       : DataStreamers;
 
-  return { data: Streamers, isLoading };
+  return {
+    data: Streamers,
+    isLoading: NoDataStreamers.length > 0 ? isLoading : false,
+  };
 }

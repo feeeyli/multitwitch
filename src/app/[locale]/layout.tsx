@@ -1,5 +1,7 @@
+import { UpdateHandler } from "@/components/update-handler";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { LocaleProviders } from "./providers";
 
 // Can be imported from a shared config
@@ -20,6 +22,9 @@ export default function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      <Suspense fallback={null}>
+        <UpdateHandler />
+      </Suspense>
       <LocaleProviders>
         <div lang={locale}>{children}</div>
       </LocaleProviders>

@@ -17,7 +17,7 @@
         "loading-streamers": "Carregando streamers",
         "loading-info": "Buscando informações",
         "no-searched-streamers": "Começe a escrever para buscar streamers...",
-        "no-pinned-streamers": "Parece que você não tem nenhum streamer fixado. <br></br><br></br>Clique no botão ao lado da barra de busca, pesquise e fixe seus streamers favoritos. <br></br><br></br>Streamers fixados irão aparecer aqui para acesso rapido.",
+        "no-pinned-streamers": "Você não tem nenhum streamer fixado. <br></br>Clique no botão ao lado da barra de busca, pesquise e fixe seus streamers favoritos. <br></br><br></br>Streamers fixados irão aparecer aqui para acesso rapido.",
         "new-participants": "{count, plural, =1 {Novo participante!} other {Novos participantes!}}",
         "sort": {
           "label": "Ordenar",
@@ -149,7 +149,7 @@
         "streamers-avatar": {
           "label": "Avatar dos streamers",
           "twitch": "Perfil da Twitch",
-          "skin": "Skin do Minecraft",
+          "skin": "Skin do Minecraft (se possível)",
           "both": "Ambas"
         },
         "streamers-status": {

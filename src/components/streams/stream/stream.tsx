@@ -25,6 +25,7 @@ export const useStream = () => useContext(StreamContext);
 type StreamProps = {
   stream: StreamSchema;
   layout: Layout[];
+  isMoving: boolean;
 };
 
 export function Stream(props: StreamProps) {
@@ -66,7 +67,10 @@ export function Stream(props: StreamProps) {
       }}
     >
       <StreamHeader />
-      <div className="flex-grow bg-background">
+      <div
+        className="flex-grow bg-background data-[is-moving=true]:pointer-events-none select-none"
+        data-is-moving={props.isMoving}
+      >
         {/* <pre>
           {JSON.stringify({ ...props.stream, ...streamsControls }, null, 2)}
         </pre> */}

@@ -1,5 +1,6 @@
 "use client";
 
+import { env } from "@/env";
 import { useSettings } from "@/hooks/use-settings";
 import { cva } from "class-variance-authority";
 import { LayoutPresets } from "../streams/layout-presets";
@@ -63,7 +64,7 @@ export function Dialogs() {
       <section>
         <SelectorDialog />
         <ManageDialog />
-        <EventsDialog />
+        {env.APP_VARIANT !== "twitch" && <EventsDialog />}
       </section>
       <section>
         <SettingsDialog />

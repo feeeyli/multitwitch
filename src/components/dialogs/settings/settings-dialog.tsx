@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Form } from "@/components/ui/form";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { env } from "@/env";
 import { useSettings } from "@/hooks/use-settings";
 import {
   SettingsSchema,
@@ -178,11 +179,13 @@ export function SettingsDialog() {
                       label={t("form.streamers.streamers-status.offline")}
                       name="streamers.streamersStatus.offline"
                     />
-                    <FormCheckbox
-                      form={form}
-                      label={t("form.streamers.streamers-status.noPlaying")}
-                      name="streamers.streamersStatus.noPlaying"
-                    />
+                    {env.APP_VARIANT !== "twitch" && (
+                      <FormCheckbox
+                        form={form}
+                        label={t("form.streamers.streamers-status.noPlaying")}
+                        name="streamers.streamersStatus.noPlaying"
+                      />
+                    )}
                   </div>
                   <div className="space-y-2">
                     <span className="text-sm font-medium leading-none">
@@ -193,11 +196,13 @@ export function SettingsDialog() {
                       label={t("form.streamers.outro.hide-offline")}
                       name="streamers.outro.hideOffline"
                     />
-                    <FormCheckbox
-                      form={form}
-                      label={t("form.streamers.outro.hide-not-playing")}
-                      name="streamers.outro.hideNotPlaying"
-                    />
+                    {env.APP_VARIANT !== "twitch" && (
+                      <FormCheckbox
+                        form={form}
+                        label={t("form.streamers.outro.hide-not-playing")}
+                        name="streamers.outro.hideNotPlaying"
+                      />
+                    )}
                   </div>
                 </section>
                 <section className="space-y-2 mb-5 px-1">

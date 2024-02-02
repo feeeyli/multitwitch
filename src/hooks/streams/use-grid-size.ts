@@ -2,7 +2,6 @@ export function useGridSize(items: number, isDesktop: boolean = true) {
   const getColumns = () => {
     if (isDesktop) {
       if (items === 1) return 1;
-      if (items === 2) return 1;
       if (items >= 2 && items <= 6) return 2;
     } else {
       if (items <= 3) return 1;

@@ -6,7 +6,7 @@ import { headerItemsComponents } from "./stream-header-items";
 
 export function StreamHeader() {
   const { settings } = useSettings();
-  const { stream } = useStream();
+  const { stream, fullScreen } = useStream();
   const t = useTranslations("streams.stream-header");
 
   const headerItems = [
@@ -21,13 +21,23 @@ export function StreamHeader() {
   return (
     <ToolbarRoot aria-label={t("label")} asChild>
       <header className="bg-muted w-full cursor-move flex">
-        {!stream.is_chat &&
-          headerItems.map((name) => {
-            if (!settings.streams.headerItems.includes(name)) return null;
+        <div
+          data-maximized={fullScreen}
+          className="data-[maximized=true]:absolute top-8 sm:top-[1.125rem] left-1 [&>button]:data-[maximized=true]:bg-background/20 [&>button]:data-[maximized=true]:hover:text-accent-foreground [&>button]:data-[maximized=true]:hover:bg-secondary/40"
+        >
+          {!stream.is_chat && (
+            <>
+              {!fullScreen &&
+                headerItems.map((name) => {
+                  if (!settings.streams.headerItems.includes(name)) return null;
 
-            const Item = headerItemsComponents[name];
-            return <Item key={name} />;
-          })}
+                  const Item = headerItemsComponents[name];
+                  return <Item key={name} />;
+                })}
+              {fullScreen && <headerItemsComponents.fullscreen />}
+            </>
+          )}
+        </div>
         <div className="drag-handle flex-grow min-h-7 sm:min-h-3.5"></div>
       </header>
     </ToolbarRoot>

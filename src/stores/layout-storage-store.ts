@@ -119,6 +119,9 @@ type UseLayoutStorageStore = {
   layout: { [key: string]: Layout[] };
   swapPoints: { [key: string]: string[] };
 
+  setAllLayouts: (value: { [key: string]: Layout[] }) => void;
+  setAllSwapPoints: (value: { [key: string]: string[] }) => void;
+
   getLayout: () => Layout[];
   setLayout: (value: Layout[]) => void;
 
@@ -134,6 +137,9 @@ export const useLayoutStorageStore = create<UseLayoutStorageStore>()(
     (set, get) => ({
       swapPoints: {},
       layout: {},
+
+      setAllLayouts: (value) => set({ layout: value }),
+      setAllSwapPoints: (value) => set({ swapPoints: value }),
 
       getSwapPoints: () => actions.get("swapPoints", get),
       addSwapPoint: (value) => {
