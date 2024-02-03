@@ -72,7 +72,13 @@ export default function Update() {
   const router = useRouter();
   const LocalStreamers = useLocalStreamers();
 
-  if (typeof window === "undefined") return null;
+  if (typeof window === "undefined")
+    return (
+      <main className="min-h-screen flex flex-col items-center py-24 gap-8">
+        <h1 className="font-semibold text-xl">Updating MultiTwitch...</h1>
+        <h2 className="font-medium text-lg">Please wait for redirect</h2>
+      </main>
+    );
 
   const settings = JSON.parse(window.localStorage.getItem("settings") ?? "{}");
 
