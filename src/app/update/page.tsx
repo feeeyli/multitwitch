@@ -69,6 +69,11 @@ function parseLayout(
 }
 
 export default function Update() {
+  const router = useRouter();
+  const LocalStreamers = useLocalStreamers();
+
+  if (typeof window === "undefined") return null;
+
   const settings = JSON.parse(window.localStorage.getItem("settings") ?? "{}");
 
   if (Object.keys(settings).length > 0) {
@@ -126,8 +131,6 @@ export default function Update() {
     avatars: string[];
     twitchNames: string[];
   }[];
-
-  const LocalStreamers = useLocalStreamers();
 
   const customData = {
     pinnedStreamers: pinnedStreamers.map((ps) => ({
@@ -244,8 +247,6 @@ export default function Update() {
   window.localStorage.removeItem("custom-groups");
   window.localStorage.removeItem("settings");
   window.localStorage.removeItem("changelogs-view");
-
-  const router = useRouter();
 
   setTimeout(() => {
     router.replace("/");
