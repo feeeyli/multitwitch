@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { Noto_Sans as FontSans } from "next/font/google";
 import "../styles/globals.css";
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   variable: "--font-sans",
