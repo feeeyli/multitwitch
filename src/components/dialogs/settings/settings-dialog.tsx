@@ -46,12 +46,12 @@ const headerItems: {
   { value: "fullscreen", icon: <Expand size="1rem" /> },
   { value: "sound", icon: <Volume2 size="1rem" /> },
   { value: "chat", icon: <MessageSquare size="1rem" /> },
-  { value: "reload", icon: <RefreshCcw size="1rem" /> },
-  { value: "remove-stream", icon: <X size="1rem" /> },
   {
     value: "swap-points",
     icon: <GoToSwapPoint size="1rem" variant={0} />,
   },
+  { value: "reload", icon: <RefreshCcw size="1rem" /> },
+  { value: "remove-stream", icon: <X size="1rem" /> },
 ];
 
 export function SettingsDialog() {
@@ -225,16 +225,6 @@ export function SettingsDialog() {
                           }`
                         ),
                       }))}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <span className="text-sm font-medium leading-none">
-                      {t("form.streams.outro.label")}
-                    </span>
-                    <FormCheckbox
-                      form={form}
-                      label={t("form.streams.outro.start-muted")}
-                      name="streams.startMuted"
                     />
                   </div>
                 </section>

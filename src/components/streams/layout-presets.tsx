@@ -39,7 +39,9 @@ export function LayoutPresets() {
       <DropdownMenuContent side="left">
         {streamsList.length > 1 && (
           <DropdownMenuItem
+            disabled
             onClick={() => {
+              return;
               const lay = presets.focus(
                 presets.generateBlankLayout(streamsList),
                 1
@@ -56,7 +58,9 @@ export function LayoutPresets() {
         )}
         {streamsList.length > 2 && (
           <DropdownMenuItem
+            disabled
             onClick={() => {
+              return;
               const lay = presets.focus(
                 presets.generateBlankLayout(streamsList),
                 2
@@ -73,7 +77,9 @@ export function LayoutPresets() {
         )}
         {streamsList.length > 4 && (
           <DropdownMenuItem
+            disabled
             onClick={() => {
+              return;
               const lay = presets.focus(
                 presets.generateBlankLayout(streamsList),
                 4

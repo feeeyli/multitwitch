@@ -46,7 +46,6 @@ export function useSettings(): {
         },
         streams: {
           headerItems: ["sound", "fullscreen", "chat", "swap-points"],
-          startMuted: true,
         },
       },
       setSettings: () => {},

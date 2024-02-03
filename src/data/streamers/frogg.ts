@@ -116,14 +116,6 @@ export const FROGG_STREAMERS: StreamerSchema[] = [
       "https://static-cdn.jtvnw.net/jtv_user_pictures/031207fe-1ebb-4d1f-b406-27553e0ecb83-profile_image-300x300.png",
   },
   {
-    display_name: "LeoziinReact",
-    twitch_name: "leoziinreact",
-    default_streamer: true,
-    no_data: true,
-    avatar_url:
-      "https://static-cdn.jtvnw.net/jtv_user_pictures/edf27e31-5fdd-461d-836f-aea763eaca07-profile_image-300x300.png",
-  },
-  {
     display_name: "LJoga",
     twitch_name: "ljoga",
     default_streamer: true,

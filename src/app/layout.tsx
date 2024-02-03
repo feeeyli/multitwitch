@@ -12,15 +12,39 @@ export const fontSans = FontSans({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const titles = {
-    twitch: "MultiTwitch",
-    qsmp: "MultiQSMP",
-    purgatory: "MultiQSMP Purgatory",
-    frogg: "MultiFrogg",
+  const t = {
+    twitch: {
+      title: "MultiTwitch",
+      description: "",
+    },
+    qsmp: {
+      title: "MultiQSMP",
+      description: "A website to watch all QSMP streamers at the same time.",
+    },
+    purgatory: {
+      title: "MultiQSMP Purgatory",
+      description:
+        "A website to watch all QSMP Purgatory streamers at the same time.",
+    },
+    frogg: {
+      title: "MultiFrogg",
+      description:
+        "A website to watch all Frogg SMP streamers at the same time.",
+    },
   };
 
   return {
-    title: titles[env.APP_VARIANT],
+    title: t[env.APP_VARIANT].title,
+    description: t[env.APP_VARIANT].description,
+    icons: {
+      icon: `/favicon-${env.APP_VARIANT}.ico`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t[env.APP_VARIANT].title,
+      description: t[env.APP_VARIANT].description,
+      site: "@feeeyli",
+    },
   };
 }
 

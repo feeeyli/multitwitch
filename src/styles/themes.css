@@ -43,7 +43,6 @@
 
     --input: var(--border);
   }
-
   .dark .qsmp {
     --theme-hue: 262;
 
@@ -75,6 +74,7 @@
     --border: var(--secondary);
     --input: var(--secondary);
   }
+
   :root .purgatory {
     --theme-hue: 178;
 
@@ -109,7 +109,6 @@
 
     --input: var(--border);
   }
-
   .dark .purgatory {
     --theme-hue: 178;
 
@@ -141,6 +140,7 @@
     --border: var(--secondary);
     --input: var(--secondary);
   }
+
   :root .frogg {
     --theme-hue: 135;
 
@@ -175,7 +175,6 @@
 
     --input: var(--border);
   }
-
   .dark .frogg {
     --theme-hue: 135;
 
@@ -207,6 +206,7 @@
     --border: var(--secondary);
     --input: var(--secondary);
   }
+
   :root .twitch {
     --theme-hue: 336;
 
@@ -241,7 +241,6 @@
 
     --input: var(--border);
   }
-
   .dark .twitch {
     --theme-hue: 336;
 

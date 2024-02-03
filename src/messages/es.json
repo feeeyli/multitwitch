@@ -166,7 +166,7 @@
       "streams": {
         "title": "Lives",
         "headers": {
-          "label": "Menu das lives",
+          "label": "Menus das lives",
           "always-show": "Manter menu sempre aberto.",
           "use-handle-as-header": "Manter menu sempre visível acima da live."
         },
@@ -199,7 +199,7 @@
       },
       "enable-chat": {
         "title": "Como ativo o chat?",
-        "content": "No topo de cada live há um menu com varias opções, entre elas um botão para alternar o chat da live em questão."
+        "content": "No topo de cada live há uma pequena seta, clicando nela abrirá um menu com varias opções, entre elas um botão para alternar o chat da live em questão."
       },
       "streamers-status": {
         "title": "Oque significa as variações nos streamers?",

@@ -28,7 +28,6 @@ export const settingsSchema = z.object({
   }),
   streams: z.object({
     headerItems: z.array(headerItemsNames),
-    startMuted: z.boolean(),
   }),
 });
 

@@ -1,5 +1,4 @@
 import { StreamSchema } from "@/hooks/streams/use-streams-list";
-import { useSettings } from "@/hooks/use-settings";
 import { createContext, useContext, useState } from "react";
 import { Layout } from "react-grid-layout";
 import { StreamHeader } from "./stream-header";
@@ -29,9 +28,8 @@ type StreamProps = {
 };
 
 export function Stream(props: StreamProps) {
-  const { settings } = useSettings();
   const [streamsControls, setStreamsControls] = useState({
-    sound: !settings.streams.startMuted,
+    sound: false,
     fullScreen: false,
     refreshKey: 0,
   });

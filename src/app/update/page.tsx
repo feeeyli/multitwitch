@@ -90,7 +90,6 @@ export default function Update() {
             (item: string) =>
               !["captions", "move-left", "move-right"].includes(item)
           ),
-        startMuted: settings.streams.startMuted,
       },
     } as SettingsSchema);
 

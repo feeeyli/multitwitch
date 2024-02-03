@@ -1,3 +1,15 @@
+.react-grid-layout .react-resizable-handle {
+  @apply z-30 bg-none;
+}
+
+.react-grid-layout .react-grid-item .react-resizable-handle::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  @apply h-2 w-2 rounded-br-sm border-b-2 border-r-2 border-solid border-primary sm:h-[0.4rem] sm:w-[0.4rem];
+}
+
 .react-grid-layout {
   position: relative;
   transition: height 200ms ease;

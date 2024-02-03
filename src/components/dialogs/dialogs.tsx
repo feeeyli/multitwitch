@@ -11,7 +11,7 @@ import { SelectorDialog } from "./selector/selector-dialog";
 import { SettingsDialog } from "./settings/settings-dialog";
 
 const dialogsVariants = cva(
-  "flex gap-6 absolute [&>section]:flex [&>section]:gap-2",
+  "flex gap-6 absolute [&>section]:flex [&>section]:gap-2 overflow-hidden",
   {
     variants: {
       "dialogs-position": {

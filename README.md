@@ -56,3 +56,5 @@
   - [x] Swap points
   - [x] Default layouts
   - [x] Resize or move chats
+- [x] Metadata
+- [x] Home screen
