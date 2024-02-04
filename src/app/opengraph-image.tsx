@@ -30,24 +30,24 @@ export default async function Image() {
 
   const themes = {
     qsmp: {
-      background: "#1e1a23",
-      foreground: "#f9fafb",
-      primary: "#bfa9e5",
+      background: "#222120",
+      foreground: "#fcfcfc",
+      primary: "#ffc94c",
     },
     twitch: {
-      background: "#1e1a23",
-      foreground: "#f9fafb",
-      primary: "#bfa9e5",
+      background: "#222021",
+      foreground: "#fcfcfc",
+      primary: "#ff4c94",
     },
     purgatory: {
-      background: "#1e1a23",
-      foreground: "#f9fafb",
-      primary: "#bfa9e5",
+      background: "#222120",
+      foreground: "#fcfcfc",
+      primary: "#ffc94c",
     },
     frogg: {
-      background: "#1a231d",
-      foreground: "#fafbf9",
-      primary: "#9acba6",
+      background: "#202221",
+      foreground: "#fcfcfc",
+      primary: "#4cff79",
     },
   };
 
