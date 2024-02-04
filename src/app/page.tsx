@@ -30,7 +30,7 @@ export default function Home() {
         >
           <Link href="/pt">
             <img
-              src="/br.svg"
+              src="/flag/br.svg"
               alt="Bandeira do Brasil"
               width={96}
               height={72}
@@ -47,14 +47,14 @@ export default function Home() {
           <Link href="/es">
             <div className="relative">
               <img
-                src="/mx.svg"
+                src="/flag/mx.svg"
                 alt="Bandeira do Mexico"
                 width={96}
                 height={72}
                 className="aspect-[4/3] rounded-md w-28"
               />
               <img
-                src="/es.svg"
+                src="/flag/es.svg"
                 alt="Bandeira da Espanha"
                 width={96}
                 height={72}
@@ -71,7 +71,7 @@ export default function Home() {
         >
           <Link href="/en">
             <img
-              src="/us.svg"
+              src="/flag/us.svg"
               alt="United States flag"
               width={96}
               height={72}
@@ -87,7 +87,7 @@ export default function Home() {
         >
           <Link href="/fr">
             <img
-              src="/fr.svg"
+              src="/flag/fr.svg"
               alt="Drapeau de la France"
               width={96}
               height={72}
@@ -102,7 +102,7 @@ export default function Home() {
           <Button variant="secondary" className="gap-2 twitch hidden" asChild>
             <Link href="https://multwitch.vercel.app">
               <img
-                src="/favicon-twitch.ico"
+                src="/favicon/favicon-twitch.ico"
                 alt="MultiTwitch"
                 className="size-6"
               />
@@ -113,7 +113,7 @@ export default function Home() {
             <Button variant="secondary" className="gap-2 qsmp" asChild>
               <Link href="https://multiqsmp.vercel.app">
                 <img
-                  src="/favicon-qsmp.ico"
+                  src="/favicon/favicon-qsmp.ico"
                   alt="MultiQSMP"
                   className="size-6"
                 />
@@ -125,7 +125,7 @@ export default function Home() {
             <Button variant="secondary" className="gap-2 frogg" asChild>
               <Link href="https://multifrogg.vercel.app">
                 <img
-                  src="/favicon-frogg.ico"
+                  src="/favicon/favicon-frogg.ico"
                   alt="MultiFrogg"
                   className="size-6"
                 />
