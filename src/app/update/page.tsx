@@ -256,7 +256,8 @@ export default function Update() {
     window.localStorage.removeItem("changelogs-view");
 
     setTimeout(() => {
-      router.replace("/");
+      // router.replace("/");
+      window.location.href = "/";
     }, 3000);
   }
 
