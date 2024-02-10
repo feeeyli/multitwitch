@@ -44,25 +44,29 @@ function parseLayout(
               )
           )
       )
-        newObj[key] = obj[key].map(({ moved, static: stc, i, ...innerObj }) => {
-          // console.log(
-          //   "> key",
-          //   Streamers.find(
-          //     (s) =>
-          //       s.twitch_name.toLocaleLowerCase() ===
-          //       key.split("/")[Number(innerObj.i)].toLocaleLowerCase()
-          //   )?.twitch_name
-          // );
+        newObj[key] = obj[key]
+          .map(({ moved, static: stc, i, ...innerObj }) => {
+            // console.log(
+            //   "> key",
+            //   Streamers.find(
+            //     (s) =>
+            //       s.twitch_name.toLocaleLowerCase() ===
+            //       key.split("/")[Number(innerObj.i)].toLocaleLowerCase()
+            //   )?.twitch_name
+            // );
 
-          return {
-            ...innerObj,
-            i: key.split("/")[Number(i)].toLocaleLowerCase(),
-            minW: 0,
-            minH: 0,
-            moved,
-            static: stc,
-          };
-        });
+            if (!key.split("/")[Number(i)]) return null;
+
+            return {
+              ...innerObj,
+              i: key.split("/")[Number(i)].toLocaleLowerCase(),
+              minW: 0,
+              minH: 0,
+              moved,
+              static: stc,
+            };
+          })
+          .filter((l) => l !== null) as Layout[];
     }
   }
   return newObj;
