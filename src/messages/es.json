@@ -1,242 +1,242 @@
 {
   "selector-dialog": {
-    "title": "Seletor",
-    "description": "Escolha seus streamers {type, select, twitch {fixados} other {do QSMP}} ou busque por streamers na Twitch.",
-    "watch": "Assistir",
-    "selected": "{count, plural, =0 {Nenhum streamer ou grupo selecionado} =1 {Streamer ou grupo selecionado: } other {Streamers ou grupos selecionados: }}",
+    "title": "Selector",
+    "description": "Elige tus streamers {type, select, twitch {favoritos} other {QSMP}} o busca streamers en Twitch.",
+    "watch": "Ver",
+    "selected": "{count, plural, =0 {Ningún streamer o grupo seleccionado} =1 {Streamer o grupo seleccionado: } other {Streamers o grupos seleccionados: }}",
     "tabs": {
       "streamers-tab": {
         "title": "Streamers",
         "avatar-alt": "Avatar de {name}",
-        "add-favorite": "Adicionar aos favoritos",
-        "remove-favorite": "Remover dos favoritos",
-        "add-pinned": "Adicionar aos fixados",
-        "remove-pinned": "Remover dos fixados",
-        "not-playing": "Esse streamer pode não estar jogando QSMP",
-        "streamer-search-label": "Buscar por streamer {type, select, static {no QSMP} pinned {fixados} other {na Twitch}}",
-        "loading-streamers": "Carregando streamers",
-        "loading-info": "Buscando informações",
-        "no-searched-streamers": "Começe a escrever para buscar streamers...",
-        "no-pinned-streamers": "Você não tem nenhum streamer fixado. <br></br>Clique no botão ao lado da barra de busca, pesquise e fixe seus streamers favoritos. <br></br><br></br>Streamers fixados irão aparecer aqui para acesso rapido.",
-        "new-participants": "{count, plural, =1 {Novo participante!} other {Novos participantes!}}",
+        "add-favorite": "Agregar a favoritos",
+        "remove-favorite": "Quitar de favoritos",
+        "add-pinned": "Agregar a fijados",
+        "remove-pinned": "Quitar de fijados",
+        "not-playing": "Este streamer puede que no esté jugando QSMP",
+        "streamer-search-label": "Buscar {type, select, static {QSMP} pinned {fijados} other {Twitch}} streamer",
+        "loading-streamers": "Cargando streamers",
+        "loading-info": "Buscando información",
+        "no-searched-streamers": "Empieza a escribir para buscar streamers...",
+        "no-pinned-streamers": "No tienes ningún streamer fijado. <br></br>Haz clic en el botón junto a la barra de búsqueda, busca y fija tus streamers favoritos. <br></br><br></br>Los streamers fijados aparecerán aquí para un acceso rápido.",
+        "new-participants": "{count, plural, =1 {¡Nuevo participante!} other {¡Nuevos participantes!}}",
         "sort": {
           "label": "Ordenar",
-          "default": "Padrão",
-          "name": "Nome",
-          "online-first": "Online primeiro",
-          "playing-first": "Jogando QSMP primeiro"
+          "default": "Por defecto",
+          "name": "Nombre",
+          "online-first": "En línea primero",
+          "playing-first": "Jugando QSMP primero"
         },
         "select": {
-          "label": "Selecionar",
+          "label": "Seleccionar",
           "all": "Todos",
-          "none": "Nenhum",
-          "online": "Todos onlines",
-          "playing": "Todos jogando QSMP"
+          "none": "Ninguno",
+          "online": "Todos en línea",
+          "playing": "Todos jugando QSMP"
         }
       },
       "groups-tab": {
         "title": "Grupos",
         "skin-alt": "Skin de {name}",
-        "add-favorite": "Adicionar aos favoritos",
-        "remove-favorite": "Remover dos favoritos",
-        "group-search-label": "Buscar por grupos",
-        "hide-members": "Esconder",
+        "add-favorite": "Agregar a favoritos",
+        "remove-favorite": "Quitar de favoritos",
+        "group-search-label": "Buscar grupos",
+        "hide-members": "Ocultar",
         "select": {
-          "label": "Selecionar",
+          "label": "Seleccionar",
           "all": "Todos",
-          "none": "Nenhum"
+          "none": "Ninguno"
         }
       }
     }
   },
   "custom-group-dialogs": {
     "create": {
-      "title": "Criar grupo",
-      "save": "Criar",
+      "title": "Crear grupo",
+      "save": "Crear",
       "cancel": "Cancelar",
       "form": {
         "display-name": {
-          "label": "Nome",
-          "placeholder": "ex.: Grupo Legal <3",
-          "error": "O nome não pode ser vazio."
+          "label": "Nombre",
+          "placeholder": "ej.: Grupo Genial <3",
+          "error": "El nombre no puede estar vacío."
         },
         "simple-name": {
-          "label": "Nome na URL (deixe em branco para gerar automaticamente)",
-          "placeholder": "ex.: grupo-legal",
-          "error": "O nome não pode ser vazio."
+          "label": "Nombre URL (dejar en blanco para generar automáticamente)",
+          "placeholder": "ej.: grupo-genial",
+          "error": "El nombre no puede estar vacío."
         },
         "members": {
-          "label": "Membros",
-          "error": "Escolha pelo menos 1 streamer.",
+          "label": "Miembros",
+          "error": "Elige al menos 1 streamer.",
           "avatar-alt": "Avatar de {name}"
         }
       }
     },
     "edit": {
       "title": "Editar grupo",
-      "save": "Salvar",
-      "delete": "Excluir",
+      "save": "Guardar",
+      "delete": "Borrar",
       "cancel": "Cancelar",
       "form": {
         "display-name": {
-          "label": "Nome",
-          "placeholder": "ex.: Grupo Legal <3",
-          "error": "O nome não pode ser vazio."
+          "label": "Nombre",
+          "placeholder": "ej.: Grupo Genial <3",
+          "error": "El nombre no puede estar vacío."
         },
         "simple-name": {
-          "label": "Nome na URL",
-          "placeholder": "ex.: grupo-legal",
-          "error": "O nome não pode ser vazio."
+          "label": "Nombre URL",
+          "placeholder": "ej.: grupo-genial",
+          "error": "El nombre no puede estar vacío."
         },
         "members": {
-          "label": "Membros",
-          "error": "Escolha pelo menos 1 streamer.",
+          "label": "Miembros",
+          "error": "Elige al menos 1 streamer.",
           "avatar-alt": "Avatar de {name}"
         }
       }
     },
     "delete": {
-      "title": "Excluir",
-      "description": "Você está prestes a deletar o grupo \"{ name }\", está certo disso? Essa ação não pode ser desfeita.",
+      "title": "Borrar",
+      "description": "Estás a punto de borrar el grupo \"{ name }\", ¿estás seguro? Esta acción no se puede deshacer.",
       "cancel": "Cancelar",
-      "confirm": "Sim, excluir"
+      "confirm": "Sí, borrar"
     }
   },
   "manage-dialog": {
-    "title": "Gerenciador",
-    "description": "Gerencie seus streamers, grupos e chats.",
-    "watch": "Assistir",
+    "title": "Gestor",
+    "description": "Gestiona tus streamers, grupos y chats.",
+    "watch": "Ver",
     "streamers-title": "Streamers",
-    "no-streamers": "Nenhum streamer selecionado.",
+    "no-streamers": "No se ha seleccionado ningún streamer.",
     "groups-title": "Grupos",
-    "no-groups": "Nenhum grupo selecionado.",
+    "no-groups": "No se ha seleccionado ningún grupo.",
     "avatar-alt": "Avatar de {name}"
   },
   "events-dialog": {
     "title": "Eventos",
-    "description": "Fique por dentro dos futuros eventos do QSMP.",
-    "next-event": "Proximo evento em:",
-    "event-started": "O evento já começou!",
-    "no-events": "Nenhum evento programado!"
+    "description": "Mantente actualizado sobre los próximos eventos de QSMP.",
+    "next-event": "Próximo evento en:",
+    "event-started": "El evento ya ha comenzado.",
+    "no-events": "No hay eventos programados."
   },
   "settings-dialog": {
-    "title": "Configurações",
-    "description": "Customize o MultiQSMP da maneira que preferir.",
-    "save": "Salvar",
+    "title": "Configuraciones",
+    "description": "Personaliza MultiQSMP como prefieras.",
+    "save": "Guardar",
     "cancel": "Cancelar",
     "form": {
       "appearance": {
-        "title": "Aparência",
+        "title": "Apariencia",
         "theme": {
           "label": "Tema",
-          "dark": "Escuro",
+          "dark": "Oscuro",
           "light": "Claro",
-          "system": "Seguir tema do sistema"
+          "system": "Seguir el tema del sistema"
         },
         "dialog-position": {
-          "label": "Posição dos menus",
-          "right": "Direita",
-          "bottom": "Baixo",
-          "left": "Esquerda"
+          "label": "Posición del menú",
+          "right": "Derecha",
+          "bottom": "Abajo",
+          "left": "Izquierda"
         },
         "outro": {
-          "label": "Outro",
-          "hide-dialog": "Esconder menus."
+          "label": "Otro",
+          "hide-dialog": "Ocultar menús."
         }
       },
       "streamers": {
         "title": "Streamers",
         "streamers-avatar": {
-          "label": "Avatar dos streamers",
-          "twitch": "Perfil da Twitch",
-          "skin": "Skin do Minecraft (se possível)",
-          "both": "Ambas"
+          "label": "Avatares de streamers",
+          "twitch": "Perfil de Twitch",
+          "skin": "Skin de Minecraft (si está disponible)",
+          "both": "Ambos"
         },
         "streamers-status": {
-          "label": "Status das lives",
-          "offline": "Mostrar se está offline.",
-          "noPlaying": "Mostrar se está jogando QSMP."
+          "label": "Estado en vivo",
+          "offline": "Mostrar si está desconectado.",
+          "noPlaying": "Mostrar si no está jugando QSMP."
         },
         "outro": {
-          "label": "Outro",
-          "hide-offline": "Esconder streamers offlines.",
-          "hide-not-playing": "Esconder streamers sem jogar QSMP."
+          "label": "Otro",
+          "hide-offline": "Ocultar streamers desconectados.",
+          "hide-not-playing": "Ocultar streamers que no están jugando QSMP."
         }
       },
       "streams": {
-        "title": "Lives",
+        "title": "Streams",
         "headers": {
-          "label": "Menus das lives",
-          "always-show": "Manter menu sempre aberto.",
-          "use-handle-as-header": "Manter menu sempre visível acima da live."
+          "label": "Menú de streams",
+          "always-show": "Mantener el menú siempre abierto.",
+          "use-handle-as-header": "Mantener el menú siempre visible sobre el stream."
         },
         "header-items": {
-          "label": "Botões de ação rapida",
+          "label": "Botones de acción rápida",
           "actions-labels": {
-            "fullscreen": "Expandir live",
-            "sound": "Ativar/desativar som",
-            "chat": "Ativar/desativar chat",
-            "reload": "Recarregar live",
-            "remove-stream": "Remover live / Esconder Live",
-            "swap-points": "Pontos de troca"
+            "fullscreen": "Expandir stream",
+            "sound": "Alternar sonido",
+            "chat": "Alternar chat",
+            "reload": "Recargar stream",
+            "remove-stream": "Eliminar stream / Ocultar stream",
+            "swap-points": "Puntos de intercambio"
           }
         },
         "outro": {
-          "label": "Outro",
-          "start-muted": "Começar lives sem som.",
-          "movable-chat": "Movimentar e redimensionar chats."
+          "label": "Otro",
+          "start-muted": "Iniciar streams en silencio.",
+          "movable-chat": "Mover y redimensionar chats."
         }
       }
     }
   },
   "faq-dialog": {
-    "title": "FAQ",
-    "description": "Ache a resposta pra algumas perguntas que você possa ter.",
+    "title": "Preguntas frecuentes",
+    "description": "Encuentra respuestas a algunas preguntas que puedas tener.",
     "faq-list": {
       "twitch-account": {
-        "title": "Posso utilizar minha conta da Twitch?",
-        "content": "Sim, para isso há 3 jeitos: \n- Conecte sua conta pelo site da [Twitch](http://twitch.tv) e então atualize a pagina do MultiQSMP. \n- Envie uma mensagem em qualquer chat pelo MultiQSMP e um alerta de login aparecerá. \n- Em qualquer live, clique em seguir e o alerta de login também aparecerá."
+        "title": "¿Puedo usar mi cuenta de Twitch?",
+        "content": "Sí, hay 3 formas de hacerlo: \n- Conecta tu cuenta a través del [sitio web de Twitch](http://twitch.tv) y luego actualiza la página de MultiQSMP. \n- Envía un mensaje en cualquier chat de MultiQSMP y aparecerá un aviso de inicio de sesión. \n- En cualquier stream, haz clic en seguir y también aparecerá el aviso de inicio de sesión."
       },
       "enable-chat": {
-        "title": "Como ativo o chat?",
-        "content": "No topo de cada live há uma pequena seta, clicando nela abrirá um menu com varias opções, entre elas um botão para alternar o chat da live em questão."
+        "title": "¿Cómo activo el chat?",
+        "content": "En la parte superior de cada stream, hay un menú con varias opciones, incluido un botón para alternar el chat de ese stream."
       },
       "streamers-status": {
-        "title": "Oque significa as variações nos streamers?",
-        "content": "Quando o streamer está cinza, isso significa que ele está offline. Quando há um indicador amarelo ele está online porem pode não estar jogando QSMP no momento. \n\n **Obs.:** Para indicar se o streamers está ou não jogando QSMP é levado em consideração as tags e o jogo marcado na live, por isso nem sempre o indicador estará correto."
+        "title": "¿Qué significan las variaciones en los streamers?",
+        "content": "Cuando el streamer está en gris, significa que está desconectado. Cuando hay un indicador amarillo, está en línea pero puede que no esté jugando QSMP en ese momento. \n\n **Nota:** Para indicar si el streamer está jugando QSMP o no, se tienen en cuenta las etiquetas y el juego marcado en el stream, por lo que el indicador puede que no siempre sea correcto."
       },
       "found-bug": {
-        "title": "Encontrei/estou tendo um erro!",
-        "content": "Se você estiver com algum erro, algo não estiver funcionando corretamente e afins, você pode entrar no nosso [formulário de feedbacks](https://forms.gle/ceFMBMkvyUKwxpms7) e explicar seu problema."
+        "title": "¡Encontré/tengo un error!",
+        "content": "Si encuentras algún error, algo no funciona correctamente, etc., puedes ir a nuestro [formulario de comentarios](https://forms.gle/ceFMBMkvyUKwxpms7) y explicar tu problema."
       },
       "suggestion": {
-        "title": "Tenho uma sugestão!",
-        "content": "Se você quiser sugerir uma nova função, alteração de algo, ou qualquer coisa desse tipo, você pode entrar no nosso [formulário de feedbacks](https://forms.gle/ceFMBMkvyUKwxpms7) e enviar sua sugestão."
+        "title": "¡Tengo una sugerencia!",
+        "content": "Si quieres sugerir una nueva función, cambiar algo o cualquier cosa por el estilo, puedes ir a nuestro [formulario de comentarios](https://forms.gle/ceFMBMkvyUKwxpms7) y enviar tu sugerencia."
       },
       "fork-project": {
-        "title": "Quero ajudar o projeto, como posso fazer isso?",
-        "content": "Se você programa e deseja me ajudar, você pode fazer um fork do [repositorio do projeto](http://github.com/feeeyli/multitwitch)."
+        "title": "¡Quiero contribuir al proyecto, cómo puedo hacerlo?",
+        "content": "Si programas y quieres ayudar, puedes hacer un fork del [repositorio del proyecto](http://github.com/feeeyli/multitwitch)."
       }
     }
   },
   "streams": {
-    "no-streams": "Parece que você ainda não escolheu nenhuma live. <br></br>Clique no botão \"<icon></icon>\" á direita e comece a assistir!",
+    "no-streams": "Parece que aún no has seleccionado ningún stream. <br></br>Haz clic en el botón \"<icon></icon>\" a la derecha y comienza a ver.",
     "stream-header": {
-      "label": "Ações rapidas",
-      "sound": "{active, select, false {Ativar som} other {Desativar som}}",
-      "full-screen": "{active, select, false {Expandir} other {Reduzir}}",
-      "chat": "{active, select, false {Abrir chat} other {Fechar chat}}",
-      "reload": "Recarregar live",
-      "remove": "{type, select, streamer {Remover live} other {Esconder live}}",
-      "toggle-swap-point": "{active, select, false {Criar ponto de troca} other {Remover ponto de troca}}",
-      "swap-points": "Pontos de troca",
-      "goto-swap-point": "Ir para ponto de troca { number } ({ name })"
+      "label": "Acciones rápidas",
+      "sound": "{active, select, false {Activar sonido} other {Desactivar sonido}}",
+      "full-screen": "{active, select, false {Expandir} other {Reducir}}",
+      "chat": "{active, select, false {Abrir chat} other {Cerrar chat}}",
+      "reload": "Recargar stream",
+      "remove": "{type, select, streamer {Eliminar stream} other {Ocultar stream}}",
+      "toggle-swap-point": "{active, select, false {Crear punto de intercambio} other {Eliminar punto de intercambio}}",
+      "swap-points": "Puntos de intercambio",
+      "goto-swap-point": "Ir al punto de intercambio { number } ({ name })"
     }
   },
   "preset-layouts": {
-    "one-focus": "1 foco (em breve)",
-    "two-focus": "2 focos (em breve)",
-    "four-focus": "4 foco (em breve)",
-    "reset": "Resetar"
+    "one-focus": "1 enfoque (próximamente)",
+    "two-focus": "2 enfoques (próximamente)",
+    "four-focus": "4 enfoque (próximamente)",
+    "reset": "Restablecer"
   }
 }

@@ -211,4 +211,16 @@ export const QSMP_GROUPS: GroupSchema[] = [
     ],
     default_group: true,
   },
+  {
+    display_name: "한국인",
+    simple_name: "hangugin",
+    members: [
+      {
+        display_name: "악어",
+        twitch_name: "jdm2088",
+        avatar_url: null,
+      },
+    ],
+    default_group: true,
+  },
 ];

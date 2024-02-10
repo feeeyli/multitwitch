@@ -2,13 +2,19 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { env } from "@/env";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Noto_Sans as FontSans } from "next/font/google";
+import { Noto_Sans as FontSans, Noto_Sans_KR } from "next/font/google";
 import "../styles/globals.css";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   variable: "--font-sans",
+});
+
+const fontKoreanSans = Noto_Sans_KR({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-korean-sans",
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -82,6 +88,7 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-light font-sans antialiased",
           fontSans.variable,
+          fontKoreanSans.variable,
           env.APP_VARIANT
         )}
       >

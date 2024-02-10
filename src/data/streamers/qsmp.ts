@@ -307,4 +307,12 @@ export const QSMP_STREAMERS: StreamerSchema[] = [
     default_streamer: true,
     no_data: true,
   },
+  {
+    display_name: "악어",
+    twitch_name: "jdm2088",
+    avatar_url:
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/jdm2088-profile_image-c46fd83bd8115db2-300x300.png",
+    default_streamer: true,
+    no_data: true,
+  },
 ];

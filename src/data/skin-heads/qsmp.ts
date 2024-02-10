@@ -66,4 +66,5 @@ export const QSMP_SKIN_HEADS: { [skin: string]: string } = {
     "https://s.namemc.com/2d/skin/face.png?id=107ee4beef74b01a&scale=32",
   etoiles: "https://s.namemc.com/2d/skin/face.png?id=2d7f002a5318a329&scale=32",
   kamet0: "https://s.namemc.com/2d/skin/face.png?id=6c7a87a98c1efed1&scale=32",
+  jdm2088: "https://s.namemc.com/2d/skin/face.png?id=7f3033536d52f5a5&scale=32",
 };

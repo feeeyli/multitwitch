@@ -1,0 +1,242 @@
+{
+  "selector-dialog": {
+    "title": "선택기",
+    "description": "Twitch {type, select, twitch {좋아하는} other {QSMP}} 스트리머를 선택하거나 Twitch에서 스트리머를 검색하세요.",
+    "watch": "시청",
+    "selected": "{count, plural, =0 {선택된 스트리머나 그룹 없음} =1 {선택된 스트리머 또는 그룹: } other {선택된 스트리머 또는 그룹: }}",
+    "tabs": {
+      "streamers-tab": {
+        "title": "스트리머",
+        "avatar-alt": "{name}의 아바타",
+        "add-favorite": "즐겨찾기에 추가",
+        "remove-favorite": "즐겨찾기에서 제거",
+        "add-pinned": "고정 목록에 추가",
+        "remove-pinned": "고정 목록에서 제거",
+        "not-playing": "이 스트리머는 현재 QSMP를 플레이하지 않을 수 있습니다.",
+        "streamer-search-label": "{type, select, static {QSMP} pinned {고정됨} other {Twitch}} 스트리머 검색",
+        "loading-streamers": "스트리머 로딩 중",
+        "loading-info": "정보 가져오는 중",
+        "no-searched-streamers": "스트리머 검색을 시작하세요...",
+        "no-pinned-streamers": "고정된 스트리머가 없습니다. <br></br>검색 창 옆의 버튼을 클릭하여 즐겨찾는 스트리머를 검색하고 고정하세요. <br></br><br></br>고정된 스트리머는 여기에서 빠르게 액세스할 수 있습니다.",
+        "new-participants": "{count, plural, =1 {새 참가자!} other {새 참가자!}}",
+        "sort": {
+          "label": "정렬",
+          "default": "기본",
+          "name": "이름",
+          "online-first": "온라인 우선",
+          "playing-first": "QSMP 먼저 플레이"
+        },
+        "select": {
+          "label": "선택",
+          "all": "모두",
+          "none": "없음",
+          "online": "모두 온라인",
+          "playing": "모두 QSMP 플레이"
+        }
+      },
+      "groups-tab": {
+        "title": "그룹",
+        "skin-alt": "{name}의 스킨",
+        "add-favorite": "즐겨찾기에 추가",
+        "remove-favorite": "즐겨찾기에서 제거",
+        "group-search-label": "그룹 검색",
+        "hide-members": "숨기기",
+        "select": {
+          "label": "선택",
+          "all": "모두",
+          "none": "없음"
+        }
+      }
+    }
+  },
+  "custom-group-dialogs": {
+    "create": {
+      "title": "그룹 만들기",
+      "save": "생성",
+      "cancel": "취소",
+      "form": {
+        "display-name": {
+          "label": "이름",
+          "placeholder": "예: 멋진 그룹",
+          "error": "이름은 비워둘 수 없습니다."
+        },
+        "simple-name": {
+          "label": "URL 이름 (자동 생성하려면 비워둘 것)",
+          "placeholder": "예: 멋진-그룹",
+          "error": "이름은 비워둘 수 없습니다."
+        },
+        "members": {
+          "label": "멤버",
+          "error": "적어도 1명의 스트리머를 선택하세요.",
+          "avatar-alt": "{name}의 아바타"
+        }
+      }
+    },
+    "edit": {
+      "title": "그룹 편집",
+      "save": "저장",
+      "delete": "삭제",
+      "cancel": "취소",
+      "form": {
+        "display-name": {
+          "label": "이름",
+          "placeholder": "예: 멋진 그룹",
+          "error": "이름은 비워둘 수 없습니다."
+        },
+        "simple-name": {
+          "label": "URL 이름",
+          "placeholder": "예: 멋진-그룹",
+          "error": "이름은 비워둘 수 없습니다."
+        },
+        "members": {
+          "label": "멤버",
+          "error": "적어도 1명의 스트리머를 선택하세요.",
+          "avatar-alt": "{name}의 아바타"
+        }
+      }
+    },
+    "delete": {
+      "title": "삭제",
+      "description": "{name} 그룹을 삭제하려고 합니다. 계속하시겠습니까? 이 작업은 취소할 수 없습니다.",
+      "cancel": "취소",
+      "confirm": "예, 삭제"
+    }
+  },
+  "manage-dialog": {
+    "title": "관리자",
+    "description": "스트리머, 그룹 및 채팅을 관리합니다.",
+    "watch": "시청",
+    "streamers-title": "스트리머",
+    "no-streamers": "선택된 스트리머 없음.",
+    "groups-title": "그룹",
+    "no-groups": "선택된 그룹 없음.",
+    "avatar-alt": "{name}의 아바타"
+  },
+  "events-dialog": {
+    "title": "이벤트",
+    "description": "예정된 QSMP 이벤트를 확인하세요.",
+    "next-event": "다음 이벤트:",
+    "event-started": "이벤트가 이미 시작되었습니다!",
+    "no-events": "예정된 이벤트 없음!"
+  },
+  "settings-dialog": {
+    "title": "설정",
+    "description": "원하는대로 MultiQSMP를 사용자 지정합니다.",
+    "save": "저장",
+    "cancel": "취소",
+    "form": {
+      "appearance": {
+        "title": "외관",
+        "theme": {
+          "label": "테마",
+          "dark": "다크",
+          "light": "라이트",
+          "system": "시스템 테마 따르기"
+        },
+        "dialog-position": {
+          "label": "메뉴 위치",
+          "right": "오른쪽",
+          "bottom": "아래쪽",
+          "left": "왼쪽"
+        },
+        "outro": {
+          "label": "기타",
+          "hide-dialog": "메뉴 숨기기"
+        }
+      },
+      "streamers": {
+        "title": "스트리머",
+        "streamers-avatar": {
+          "label": "스트리머 아바타",
+          "twitch": "Twitch 프로필",
+          "skin": "마인크래프트 스킨 (사용 가능한 경우)",
+          "both": "모두"
+        },
+        "streamers-status": {
+          "label": "라이브 상태",
+          "offline": "오프라인일 때 표시",
+          "noPlaying": "QSMP를 플레이하지 않을 때 표시"
+        },
+        "outro": {
+          "label": "기타",
+          "hide-offline": "오프라인 스트리머 숨기기",
+          "hide-not-playing": "QSMP를 플레이하지 않는 스트리머 숨기기"
+        }
+      },
+      "streams": {
+        "title": "스트림",
+        "headers": {
+          "label": "스트림 메뉴",
+          "always-show": "메뉴 항상 열기",
+          "use-handle-as-header": "메뉴 항상 스트림 위에 표시"
+        },
+        "header-items": {
+          "label": "빠른 작업 버튼",
+          "actions-labels": {
+            "fullscreen": "스트림 확장",
+            "sound": "소리 전환",
+            "chat": "채팅 전환",
+            "reload": "스트림 다시 로드",
+            "remove-stream": "스트림 제거 / 숨기기",
+            "swap-points": "스왑 포인트"
+          }
+        },
+        "outro": {
+          "label": "기타",
+          "start-muted": "스트림 음소거로 시작",
+          "movable-chat": "채팅 이동 및 크기 조정"
+        }
+      }
+    }
+  },
+  "faq-dialog": {
+    "title": "FAQ",
+    "description": "가지고 있는 몇 가지 질문에 대한 답변을 찾아보세요.",
+    "faq-list": {
+      "twitch-account": {
+        "title": "Twitch 계정을 사용할 수 있나요?",
+        "content": "네, 3가지 방법이 있습니다: \n- [Twitch 웹사이트](http://twitch.tv)를 통해 계정 연결한 다음 MultiQSMP 페이지를 새로 고칩니다. \n- MultiQSMP 채팅에서 메시지를 보내면 로그인 프롬프트가 표시됩니다. \n- 스트림에서 팔로우를 클릭하면 로그인 프롬프트가 표시됩니다."
+      },
+      "enable-chat": {
+        "title": "채팅을 어떻게 활성화하나요?",
+        "content": "각 스트림 상단에 다양한 옵션을 제공하는 메뉴가 있습니다. 그 중 해당 스트림의 채팅을 전환할 수 있는 버튼이 있습니다."
+      },
+      "streamers-status": {
+        "title": "스트리머 상태 변화의 의미는 무엇인가요?",
+        "content": "스트리머가 회색인 경우 오프라인임을 의미합니다. 노란색 인디케이터가 있는 경우 온라인이지만 현재 QSMP를 플레이하지 않을 수 있습니다. \n\n **참고:** 스트리머가 QSMP를 플레이하는지 여부를 나타내기 위해 스트림에 표시된 태그 및 게임이 고려됩니다. 따라서 인디케이터가 항상 정확하지는 않을 수 있습니다."
+      },
+      "found-bug": {
+        "title": "버그를 발견했어요/문제가 있어요!",
+        "content": "버그가 발생하거나 제대로 작동하지 않는 등의 문제가 있으면 [피드백 양식](https://forms.gle/ceFMBMkvyUKwxpms7)로 이동하여 문제를 설명할 수 있습니다."
+      },
+      "suggestion": {
+        "title": "제안이 있어요!",
+        "content": "새로운 기능을 제안하거나 변경하고 싶은 사항이 있으면 [피드백 양식](https://forms.gle/ceFMBMkvyUKwxpms7)로 이동하여 제안을 제출할 수 있습니다."
+      },
+      "fork-project": {
+        "title": "프로젝트에 기여하고 싶어요, 어떻게 해야 하나요?",
+        "content": "코딩이 가능하고 도움을 주고 싶다면 [프로젝트 저장소](http://github.com/feeeyli/multitwitch)를 포크할 수 있습니다."
+      }
+    }
+  },
+  "streams": {
+    "no-streams": "아직 스트림을 선택하지 않은 것 같습니다. <br></br>오른쪽에 있는 \"<icon></icon>\" 버튼을 클릭하여 시청을 시작하세요!",
+    "stream-header": {
+      "label": "빠른 작업",
+      "sound": "{active, select, false {소리 활성화} other {소리 비활성화}}",
+      "full-screen": "{active, select, false {확장} other {축소}}",
+      "chat": "{active, select, false {채팅 열기} other {채팅 닫기}}",
+      "reload": "스트림 다시 로드",
+      "remove": "{type, select, streamer {스트림 제거} other {스트림 숨기기}}",
+      "toggle-swap-point": "{active, select, false {스왑 포인트 생성} other {스왑 포인트 제거}}",
+      "swap-points": "스왑 포인트",
+      "goto-swap-point": "스왑 포인트로 이동 { number } ({ name })"
+    },
+    "preset-layouts": {
+      "one-focus": "1 초점 (곧 제공될 예정)",
+      "two-focus": "2 초점 (곧 제공될 예정)",
+      "four-focus": "4 초점 (곧 제공될 예정)",
+      "reset": "초기화"
+    }
+  }
+}

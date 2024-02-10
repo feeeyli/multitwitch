@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { LocaleProviders } from "./providers";
 
 // Can be imported from a shared config
-const locales = ["en", "pt", "es", "fr"];
+const locales = ["en", "pt", "es", "fr", "kr"];
 
 type LocaleLayoutProps = {
   children: React.ReactNode;

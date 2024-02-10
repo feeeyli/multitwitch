@@ -5,7 +5,7 @@ export default async function middleware(request: NextRequest) {
   const defaultLocale = request.headers.get("x-your-custom-locale") || "pt";
 
   const handleI18nRouting = createIntlMiddleware({
-    locales: ["pt", "en", "es", "fr"],
+    locales: ["pt", "en", "es", "fr", "kr"],
     defaultLocale,
   });
   const response = handleI18nRouting(request);
@@ -16,5 +16,5 @@ export default async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/(pt|en|es|fr)", "/(pt|en|es|fr)/:path*"],
+  matcher: ["/(pt|en|es|fr|kr)", "/(pt|en|es|fr|kr)/:path*"],
 };

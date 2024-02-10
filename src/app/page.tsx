@@ -22,7 +22,7 @@ export default function Home() {
           <span>Bienvenu</span>
         </h2>
       </header>
-      <main className="grid grid-cols-2 gap-2 mt-6">
+      <main className="grid grid-cols-3 gap-2 mt-6">
         <Button
           variant="ghost"
           className="h-auto flex-col gap-2 sm:p-4 sm:pb-3 p-3 pb-2"
@@ -30,7 +30,7 @@ export default function Home() {
         >
           <Link href="/pt">
             <img
-              src="/flag/br.svg"
+              src="https://api.iconify.design/flagpack:br.svg"
               alt="Bandeira do Brasil"
               width={96}
               height={72}
@@ -47,14 +47,14 @@ export default function Home() {
           <Link href="/es">
             <div className="relative">
               <img
-                src="/flag/mx.svg"
+                src="https://api.iconify.design/flagpack:mx.svg"
                 alt="Bandeira do Mexico"
                 width={96}
                 height={72}
                 className="aspect-[4/3] rounded-md w-28"
               />
               <img
-                src="/flag/es.svg"
+                src="https://api.iconify.design/flagpack:es.svg"
                 alt="Bandeira da Espanha"
                 width={96}
                 height={72}
@@ -71,7 +71,7 @@ export default function Home() {
         >
           <Link href="/en">
             <img
-              src="/flag/us.svg"
+              src="https://api.iconify.design/flagpack:us.svg"
               alt="United States flag"
               width={96}
               height={72}
@@ -80,22 +80,40 @@ export default function Home() {
             <span>English</span>
           </Link>
         </Button>
-        <Button
-          variant="ghost"
-          className="h-auto flex-col gap-2 sm:p-4 sm:pb-3 p-3 pb-2"
-          asChild
-        >
-          <Link href="/fr">
-            <img
-              src="/flag/fr.svg"
-              alt="Drapeau de la France"
-              width={96}
-              height={72}
-              className="aspect-[4/3] rounded-md w-28"
-            />
-            <span>Français</span>
-          </Link>
-        </Button>
+        <div className="flex justify-center col-span-3 gap-2">
+          <Button
+            variant="ghost"
+            className="h-auto flex-col gap-2 sm:p-4 sm:pb-3 p-3 pb-2"
+            asChild
+          >
+            <Link href="/fr">
+              <img
+                src="https://api.iconify.design/flagpack:fr.svg"
+                alt="Drapeau de la France"
+                width={96}
+                height={72}
+                className="aspect-[4/3] rounded-md w-28"
+              />
+              <span>Français</span>
+            </Link>
+          </Button>
+          <Button
+            variant="ghost"
+            className="h-auto flex-col gap-2 sm:p-4 sm:pb-3 p-3 pb-2"
+            asChild
+          >
+            <Link href="/kr">
+              <img
+                src="https://api.iconify.design/flagpack:kr.svg"
+                alt="한국 국기"
+                width={96}
+                height={72}
+                className="aspect-[4/3] rounded-md w-28"
+              />
+              <span>한국어</span>
+            </Link>
+          </Button>
+        </div>
       </main>
       <footer className="flex flex-col items-center mt-auto">
         <section className="flex flex-wrap gap-4">
