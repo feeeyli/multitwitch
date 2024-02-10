@@ -1,7 +1,7 @@
 import { useSettings } from "@/hooks/use-settings";
 import { Root as ToolbarRoot } from "@radix-ui/react-toolbar";
 import { useTranslations } from "next-intl";
-import { useStream } from "./stream";
+import { getSpecialStreamer, useStream } from "./stream";
 import { headerItemsComponents } from "./stream-header-items";
 
 export function StreamHeader() {
@@ -28,12 +28,26 @@ export function StreamHeader() {
           {!stream.is_chat && (
             <>
               {!fullScreen &&
-                headerItems.map((name) => {
-                  if (!settings.streams.headerItems.includes(name)) return null;
+                headerItems
+                  .filter((hi) => {
+                    if (!getSpecialStreamer(stream.twitch_name)) return true;
 
-                  const Item = headerItemsComponents[name];
-                  return <Item key={name} />;
-                })}
+                    if (
+                      getSpecialStreamer(
+                        stream.twitch_name
+                      )!.hided_header_items.includes(hi)
+                    )
+                      return false;
+
+                    return true;
+                  })
+                  .map((name) => {
+                    if (!settings.streams.headerItems.includes(name))
+                      return null;
+
+                    const Item = headerItemsComponents[name];
+                    return <Item key={name} />;
+                  })}
               {fullScreen && <headerItemsComponents.fullscreen />}
             </>
           )}

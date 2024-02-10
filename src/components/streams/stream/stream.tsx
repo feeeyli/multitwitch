@@ -4,6 +4,19 @@ import { Layout } from "react-grid-layout";
 import { StreamHeader } from "./stream-header";
 import { StreamPlayer } from "./stream-player";
 
+export const specialStreamers = {
+  jdm2088: {
+    stream_url: "https://play.afreecatv.com/jdm1197/embed",
+    hided_header_items: ["sound", "chat"],
+  },
+};
+
+export function getSpecialStreamer(twitch_name: string) {
+  if (specialStreamers[twitch_name as keyof typeof specialStreamers]) {
+    return specialStreamers[twitch_name as keyof typeof specialStreamers];
+  }
+}
+
 type StreamContextSchema = {
   sound: boolean;
   fullScreen: boolean;
