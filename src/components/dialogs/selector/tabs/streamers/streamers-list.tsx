@@ -47,7 +47,10 @@ export function StreamersList({
   const sort = useSortStreamers();
 
   return (
-    <ScrollArea className="h-[15.5rem] sm:h-[24.5rem]" type="always">
+    <ScrollArea
+      className="h-[39dvh] sm:h-[47.5dvh]"
+      /*h-[15.5rem] sm:h-[24.5rem]*/ type="always"
+    >
       <ToggleGroup
         type="multiple"
         className="flex-wrap gap-3 py-2"
