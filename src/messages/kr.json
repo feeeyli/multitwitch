@@ -231,12 +231,12 @@
       "toggle-swap-point": "{active, select, false {스왑 포인트 생성} other {스왑 포인트 제거}}",
       "swap-points": "스왑 포인트",
       "goto-swap-point": "스왑 포인트로 이동 { number } ({ name })"
-    },
-    "preset-layouts": {
-      "one-focus": "1 초점 (곧 제공될 예정)",
-      "two-focus": "2 초점 (곧 제공될 예정)",
-      "four-focus": "4 초점 (곧 제공될 예정)",
-      "reset": "초기화"
     }
+  },
+  "preset-layouts": {
+    "one-focus": "1 초점 (곧 제공될 예정)",
+    "two-focus": "2 초점 (곧 제공될 예정)",
+    "four-focus": "4 초점 (곧 제공될 예정)",
+    "reset": "초기화"
   }
 }
