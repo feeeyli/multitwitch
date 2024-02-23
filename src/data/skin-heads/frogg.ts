@@ -15,6 +15,8 @@ export const FROGG_SKIN_HEADS: { [skin: string]: string } = {
     "https://s.namemc.com/2d/skin/face.png?id=be4d799ec02c65b6&scale=32",
   dreasbro:
     "https://s.namemc.com/2d/skin/face.png?id=0861351f94d33483&scale=32",
+  febatista:
+    "https://s.namemc.com/2d/skin/face.png?id=a141918f2aa18ebc&scale=32",
   fehdubs: "https://s.namemc.com/2d/skin/face.png?id=b1eda177df51e342&scale=32",
   imrafly: "https://s.namemc.com/2d/skin/face.png?id=dc0e2bfcbc1064d0&scale=32",
   jinkiwinkki:

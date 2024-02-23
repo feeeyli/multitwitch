@@ -76,6 +76,14 @@ export const FROGG_STREAMERS: StreamerSchema[] = [
       "https://static-cdn.jtvnw.net/jtv_user_pictures/b2784187-3ee7-4c31-8161-59ac6fddda42-profile_image-300x300.png",
   },
   {
+    display_name: "Febatista",
+    twitch_name: "febatista",
+    default_streamer: true,
+    no_data: true,
+    avatar_url:
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/0129c7d8-8e76-4501-8bad-35e6c0d3c0f6-profile_image-300x300.png",
+  },
+  {
     display_name: "fehdubs",
     twitch_name: "fehdubs",
     default_streamer: true,
