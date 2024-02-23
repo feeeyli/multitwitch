@@ -315,4 +315,12 @@ export const QSMP_STREAMERS: StreamerSchema[] = [
     default_streamer: true,
     no_data: true,
   },
+  {
+    display_name: "중력",
+    twitch_name: "vkzm14",
+    avatar_url:
+      "https://profile.img.afreecatv.com/LOGO/vk/vkzm14/vkzm14.jpg",
+    default_streamer: true,
+    no_data: true,
+  },
 ];

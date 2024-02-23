@@ -9,6 +9,10 @@ export const specialStreamers = {
     stream_url: "https://play.afreecatv.com/jdm1197/embed",
     hided_header_items: ["sound", "chat"],
   },
+  vkzm14: {
+    stream_url: "https://play.afreecatv.com/vkzm14/embed",
+    hided_header_items: ["sound", "chat"],
+  },
 };
 
 export function getSpecialStreamer(twitch_name: string) {

@@ -139,4 +139,12 @@ export const FROGG_STREAMERS: StreamerSchema[] = [
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/23d2b93f-4e22-4724-a494-266310c8fd71-profile_image-300x300.png",
   },
+  {
+    display_name: "YuyuSaz",
+    twitch_name: "yuyusaz",
+    default_streamer: true,
+    no_data: true,
+    avatar_url:
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/634e48a5-bcbb-408e-81ba-b2b7666931f5-profile_image-300x300.png",
+  },
 ];

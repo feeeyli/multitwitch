@@ -45,7 +45,10 @@ export function useStaticStreamers(): {
       )
         return [];
 
-      const query = NoDataStreamers.map((streamer) => streamer.twitch_name)
+      const query = NoDataStreamers.filter(
+        (str) => !["jdm2088", "vkzm14"].includes(str.twitch_name)
+      )
+        .map((streamer) => streamer.twitch_name)
         .join("/")
         .toLocaleLowerCase();
 
@@ -54,7 +57,11 @@ export function useStaticStreamers(): {
           query,
         },
       });
-      return data;
+      return data.concat(
+        NoDataStreamers.filter((str) =>
+          ["jdm2088", "vkzm14"].includes(str.twitch_name)
+        )
+      );
     },
   });
 
