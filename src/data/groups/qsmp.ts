@@ -220,6 +220,23 @@ export const QSMP_GROUPS: GroupSchema[] = [
         twitch_name: "jdm2088",
         avatar_url: null,
       },
+      {
+        display_name: "중력",
+        twitch_name: "vkzm14",
+        avatar_url: null,
+      },
+    ],
+    default_group: true,
+  },
+  {
+    display_name: "Deutsche",
+    simple_name: "deutsche",
+    members: [
+      {
+        display_name: "LetsHugo",
+        twitch_name: "LetsHugoTV",
+        avatar_url: null,
+      }
     ],
     default_group: true,
   },
