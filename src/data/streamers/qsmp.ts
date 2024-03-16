@@ -323,4 +323,12 @@ export const QSMP_STREAMERS: StreamerSchema[] = [
     default_streamer: true,
     no_data: true,
   },
+  {
+    display_name: "LetsHugo",
+    twitch_name: "LetsHugoTV",
+    avatar_url:
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/111bbc84-a87d-49fc-9b8e-8b9bf0c67297-profile_image-300x300.png",
+    default_streamer: true,
+    no_data: true,
+  },
 ];
