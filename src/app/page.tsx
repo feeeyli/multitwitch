@@ -96,22 +96,6 @@ export default function Home() {
             <span>Français</span>
           </Link>
         </Button>
-        <Button
-          variant="ghost"
-          className="h-auto flex-col gap-2 sm:p-4 sm:pb-3 p-3 pb-2"
-          asChild
-        >
-          <Link href="/kr">
-            <img
-              src="https://api.iconify.design/flagpack:kr.svg"
-              alt="한국 국기"
-              width={96}
-              height={72}
-              className="aspect-[4/3] rounded-md w-24 sm:w-28"
-            />
-            <span>한국어</span>
-          </Link>
-        </Button>
       </main>
       <footer className="flex flex-col items-center mt-auto">
         <p className="text-sm max-w-[28rem] text-balance w-[80vw] text-center mt-8">
@@ -122,7 +106,7 @@ export default function Home() {
           >
             feyli
           </Link>
-          , para toda comunidade do QSMP e da Frogg!
+          , para toda comunidade da Frogg!
         </p>
       </footer>
     </div>
