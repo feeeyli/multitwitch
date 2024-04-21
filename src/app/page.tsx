@@ -114,42 +114,6 @@ export default function Home() {
         </Button>
       </main>
       <footer className="flex flex-col items-center mt-auto">
-        <section className="flex flex-wrap gap-4">
-          <Button variant="secondary" className="gap-2 twitch hidden" asChild>
-            <Link href="https://multwitch.vercel.app">
-              <img
-                src="/favicon/favicon-twitch.ico"
-                alt="MultiTwitch"
-                className="size-6"
-              />
-              <span>MultiTwitch</span>
-            </Link>
-          </Button>
-          {env.APP_VARIANT !== "qsmp" && (
-            <Button variant="secondary" className="gap-2 qsmp" asChild>
-              <Link href="https://multiqsmp.vercel.app">
-                <img
-                  src="/favicon/favicon-qsmp.ico"
-                  alt="MultiQSMP"
-                  className="size-6"
-                />
-                <span>MultiQSMP</span>
-              </Link>
-            </Button>
-          )}
-          {env.APP_VARIANT !== "frogg" && (
-            <Button variant="secondary" className="gap-2 frogg" asChild>
-              <Link href="https://multifrogg.vercel.app">
-                <img
-                  src="/favicon/favicon-frogg.ico"
-                  alt="MultiFrogg"
-                  className="size-6"
-                />
-                <span>MultiFrogg</span>
-              </Link>
-            </Button>
-          )}
-        </section>
         <p className="text-sm max-w-[28rem] text-balance w-[80vw] text-center mt-8">
           Feito com 💜 por{" "}
           <Link
