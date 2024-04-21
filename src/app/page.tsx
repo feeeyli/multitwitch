@@ -22,7 +22,7 @@ export default function Home() {
           <span>Bienvenu</span>
         </h2>
       </header>
-      <main className="flex flex-wrap justify-center sm:max-w-xl gap-2 mt-6">
+      <main className="gap-2 grid grid-cols-2 mt-6">
         <Button
           variant="ghost"
           className="h-auto flex-col gap-2 sm:p-4 sm:pb-3 p-3 pb-2"
