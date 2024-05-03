@@ -52,6 +52,13 @@ export const FROGG_STREAMERS: StreamerSchema[] = [
       "https://static-cdn.jtvnw.net/jtv_user_pictures/69a4e8bc-01be-4f11-95ab-1c949932a13a-profile_image-300x300.png",
   },
   {
+    display_name: "Amelie",
+    twitch_name: "ameliebluie",
+    default_streamer: true,
+    no_data: true,
+    avatar_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/c6b18c74-54c8-42bc-85e0-ca199397acaf-profile_image-300x300.png",
+  },
+  {
     display_name: "Bastet",
     twitch_name: "bastet",
     default_streamer: true,
@@ -100,6 +107,13 @@ export const FROGG_STREAMERS: StreamerSchema[] = [
       "https://static-cdn.jtvnw.net/jtv_user_pictures/23d2b93f-4e22-4724-a494-266310c8fd71-profile_image-300x300.png",
   },
   {
+    display_name: "Guaxinim",
+    twitch_name: "guaxinim",
+    default_streamer: true,
+    no_data: true,
+    avatar_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/3a88fb53-3d0b-45f5-8658-6bb6b49575d4-profile_image-300x300.png",
+  },
+  {
     display_name: "Jinki",
     twitch_name: "jinkiwinkki",
     default_streamer: true,
@@ -146,6 +160,13 @@ export const FROGG_STREAMERS: StreamerSchema[] = [
     no_data: true,
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/41d41923-67ac-4498-9df5-e4d38f46f96f-profile_image-300x300.png",
+  },
+  {
+    display_name: "Yui",
+    twitch_name: "yuiboboca",
+    default_streamer: true,
+    no_data: true,
+    avatar_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/dd054b79-a741-484f-be2c-5ad2f0247c66-profile_image-300x300.png",
   },
   {
     display_name: "Yumi",
