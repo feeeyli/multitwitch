@@ -69,12 +69,26 @@ export function useRenderGroups(): (
 
     return [
       { name: "favorite", groups: favoriteGroups[0] },
-      { name: "default", groups: defaultGroups },
+      defaultGroups.length > 0
+        ? { name: "default", groups: defaultGroups }
+        : undefined,
       {
         name: "non-default",
         groups: nonDefaultGroups,
       },
-    ];
+    ].filter(Boolean) as {
+      name: string;
+      groups: {
+        display_name: string;
+        simple_name: string;
+        members: {
+          display_name: string;
+          twitch_name: string;
+          avatar_url: string | null;
+        }[];
+        default_group: boolean;
+      }[];
+    }[];
   }
 
   return render;

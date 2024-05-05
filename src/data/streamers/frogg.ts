@@ -56,7 +56,8 @@ export const FROGG_STREAMERS: StreamerSchema[] = [
     twitch_name: "ameliebluie",
     default_streamer: true,
     no_data: true,
-    avatar_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/c6b18c74-54c8-42bc-85e0-ca199397acaf-profile_image-300x300.png",
+    avatar_url:
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/c6b18c74-54c8-42bc-85e0-ca199397acaf-profile_image-300x300.png",
   },
   {
     display_name: "Bastet",
@@ -111,7 +112,8 @@ export const FROGG_STREAMERS: StreamerSchema[] = [
     twitch_name: "guaxinim",
     default_streamer: true,
     no_data: true,
-    avatar_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/3a88fb53-3d0b-45f5-8658-6bb6b49575d4-profile_image-300x300.png",
+    avatar_url:
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/3a88fb53-3d0b-45f5-8658-6bb6b49575d4-profile_image-300x300.png",
   },
   {
     display_name: "Jinki",
@@ -146,6 +148,15 @@ export const FROGG_STREAMERS: StreamerSchema[] = [
       "https://static-cdn.jtvnw.net/jtv_user_pictures/5d465f44-69bf-4b06-b49f-b20944fe0bcf-profile_image-300x300.png",
   },
   {
+    display_name: "Mii Reis",
+    twitch_name: "mii_reis",
+    default_streamer: true,
+    no_data: true,
+    youtube_stream: true,
+    avatar_url:
+      "https://yt3.googleusercontent.com/GQxO4T8NxrFomToU_u-zy3VSdAi7MueSWWyi9N_lakRVCQVyJloAAZrr4oec9Fr2I7XH5q02=s176-c-k-c0x00ffffff-no-rj",
+  },
+  {
     display_name: "Myn",
     twitch_name: "mynluvsx",
     default_streamer: true,
@@ -166,7 +177,8 @@ export const FROGG_STREAMERS: StreamerSchema[] = [
     twitch_name: "yuiboboca",
     default_streamer: true,
     no_data: true,
-    avatar_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/dd054b79-a741-484f-be2c-5ad2f0247c66-profile_image-300x300.png",
+    avatar_url:
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/dd054b79-a741-484f-be2c-5ad2f0247c66-profile_image-300x300.png",
   },
   {
     display_name: "Yumi",

@@ -1,3 +1,4 @@
+import { SPECIAL_STREAMERS } from "@/data/special-streamers";
 import { STREAMERS } from "@/data/streamers";
 import { useCustomDataStore } from "@/stores/custom-data-store";
 import { useStreamersSearchStore } from "@/stores/streamers-search-store";
@@ -46,7 +47,7 @@ export function useStaticStreamers(): {
         return [];
 
       const query = NoDataStreamers.filter(
-        (str) => !["jdm2088", "vkzm14"].includes(str.twitch_name)
+        (str) => !Object.keys(SPECIAL_STREAMERS).includes(str.twitch_name)
       )
         .map((streamer) => streamer.twitch_name)
         .join("/")
@@ -57,11 +58,17 @@ export function useStaticStreamers(): {
           query,
         },
       });
-      return data.concat(
-        NoDataStreamers.filter((str) =>
-          ["jdm2088", "vkzm14"].includes(str.twitch_name)
+      return data
+        .concat(
+          NoDataStreamers.filter((str) =>
+            Object.keys(SPECIAL_STREAMERS).includes(str.twitch_name)
+          )
         )
-      );
+        .sort(
+          (a, b) =>
+            NoDataStreamers.map((s) => s.twitch_name).indexOf(a.twitch_name) -
+            NoDataStreamers.map((s) => s.twitch_name).indexOf(b.twitch_name)
+        );
     },
   });
 

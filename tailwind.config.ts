@@ -79,7 +79,6 @@ module.exports = {
       fontFamily: {
         sans: [
           "var(--font-sans)",
-          "var(--font-korean-sans)",
           ...fontFamily.sans,
         ],
       },

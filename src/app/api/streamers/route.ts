@@ -80,7 +80,9 @@ async function getStreamers(query: string) {
     const is_default = includes(STREAMERS, "twitch_name", streamer.login);
 
     const offline: StreamerSchema = {
-      display_name: streamer.display_name,
+      display_name:
+        STREAMERS.find((s) => s.twitch_name === streamer.login)?.display_name ??
+        streamer.display_name,
       twitch_name: streamer.login,
       avatar_url: streamer.profile_image_url,
       is_live: false,

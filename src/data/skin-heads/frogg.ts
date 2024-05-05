@@ -41,7 +41,8 @@ export const FROGG_SKIN_HEADS: { [skin: string]: string } = {
     "https://crafatar.com/avatars/8d04f1c4-08f1-4d88-bc86-8ac55b55c314?overlay",
   guaxinim:
     "https://crafatar.com/avatars/95ec17d2-9793-46d1-91f3-9a948cf049ff?overlay",
-  // Mii_Reis: "https://crafatar.com/avatars/bad7660b-4506-4f58-9392-d46582c194c4?overlay",
+  mii_reis:
+    "https://crafatar.com/avatars/bad7660b-4506-4f58-9392-d46582c194c4?overlay",
   ameliebluie:
     "https://crafatar.com/avatars/28f2c431-9218-4420-a6f2-3ee5668009af?overlay",
   yuiboboca:

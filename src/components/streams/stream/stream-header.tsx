@@ -1,7 +1,8 @@
+import { getSpecialStreamer } from "@/data/special-streamers";
 import { useSettings } from "@/hooks/use-settings";
 import { Root as ToolbarRoot } from "@radix-ui/react-toolbar";
 import { useTranslations } from "next-intl";
-import { getSpecialStreamer, useStream } from "./stream";
+import { useStream } from "./stream";
 import { headerItemsComponents } from "./stream-header-items";
 
 export function StreamHeader() {

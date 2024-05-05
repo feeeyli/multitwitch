@@ -19,13 +19,13 @@ export const size = {
 export const contentType = "image/png";
 
 // Image generation
-export default async function Image() {
+export async function GET() {
   // Font
   const notoSansRegular = fetch(
-    new URL("../assets/NotoSans-Regular.ttf", import.meta.url)
+    new URL("../../assets/NotoSans-Regular.ttf", import.meta.url)
   ).then((res) => res.arrayBuffer());
   const notoSansBold = fetch(
-    new URL("../assets/NotoSans-Bold.ttf", import.meta.url)
+    new URL("../../assets/NotoSans-Bold.ttf", import.meta.url)
   ).then((res) => res.arrayBuffer());
 
   const themes = {
@@ -77,7 +77,7 @@ export default async function Image() {
                 color: themes[env.APP_VARIANT].foreground,
               }}
             >
-              MultiQSMP
+              MultiFrogg
             </h1>
             <div tw="flex">
               <div tw="flex flex-col items-center mr-[80px]">

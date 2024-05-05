@@ -11,12 +11,6 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-const fontKoreanSans = Noto_Sans_KR({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-korean-sans",
-});
-
 export async function generateMetadata(): Promise<Metadata> {
   const t = {
     twitch: {
@@ -88,7 +82,6 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-light font-sans antialiased",
           fontSans.variable,
-          fontKoreanSans.variable,
           env.APP_VARIANT
         )}
       >

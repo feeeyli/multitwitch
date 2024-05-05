@@ -17,6 +17,7 @@ import {
   StreamerFavoriteButton,
   StreamerPinnedButton,
   StreamerPlayingBadge,
+  YoutubeStreamerBadge,
 } from "./streamer";
 
 type StreamersListProps = {
@@ -134,6 +135,9 @@ export function StreamersList({
                       env.APP_VARIANT !== "twitch" && <StreamerPlayingBadge />}
                     {!streamer.no_data && !streamer.default_streamer && (
                       <StreamerPinnedButton />
+                    )}
+                    {streamer.no_data && streamer.youtube_stream && (
+                      <YoutubeStreamerBadge />
                     )}
                   </Streamer>
                 ));

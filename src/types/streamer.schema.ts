@@ -9,6 +9,7 @@ const commonStreamerSchema = z.object({
 
 const noDataStreamerSchema = commonStreamerSchema.extend({
   no_data: z.literal(true),
+  youtube_stream: z.boolean().optional(),
 });
 
 const withDataStreamerSchema = commonStreamerSchema

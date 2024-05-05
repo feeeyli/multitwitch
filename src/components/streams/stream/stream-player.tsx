@@ -1,7 +1,8 @@
+import { getSpecialStreamer } from "@/data/special-streamers";
 import { useTheme } from "next-themes";
 import ReactPlayer from "react-player";
 import { TwitchChat } from "react-twitch-embed";
-import { getSpecialStreamer, useStream } from "./stream";
+import { useStream } from "./stream";
 
 export function StreamPlayer() {
   const { stream, sound, refreshKey } = useStream();
@@ -40,6 +41,11 @@ export function StreamPlayer() {
         twitch: {
           options: {
             theme: actualTheme,
+          },
+        },
+        youtube: {
+          playerVars: {
+            autoplay: true,
           },
         },
       }}
