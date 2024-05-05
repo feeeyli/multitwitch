@@ -5,13 +5,13 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 // Image metadata
-export const alt = {
+const alt = {
   qsmp: "MultiQSMP",
   twitch: "MultiTwitch",
   purgatory: "MultiQSMP Purgatory",
   frogg: "MultiFrogg",
 }[env.APP_VARIANT];
-export const size = {
+const size = {
   width: 1200,
   height: 630,
 };
