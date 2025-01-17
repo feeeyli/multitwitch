@@ -200,6 +200,7 @@ export const FROGG_STREAMERS: StreamerSchema[] = [
 		twitch_name: "yuiboboca",
 		default_streamer: true,
 		no_data: true,
+		youtube_stream: true,
 		avatar_url:
 			"https://static-cdn.jtvnw.net/jtv_user_pictures/dd054b79-a741-484f-be2c-5ad2f0247c66-profile_image-300x300.png",
 	},
