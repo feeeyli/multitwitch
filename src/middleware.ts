@@ -1,5 +1,5 @@
 import createIntlMiddleware from "next-intl/middleware";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export default async function middleware(request: NextRequest) {
   if (request.nextUrl.hostname === "multifrogg.vercel.app") {
