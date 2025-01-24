@@ -2,6 +2,14 @@ import createIntlMiddleware from "next-intl/middleware";
 import { NextRequest } from "next/server";
 
 export default async function middleware(request: NextRequest) {
+  if (request.nextUrl.hostname === "multifrogg.vercel.app") {
+		return NextResponse.rewrite(
+			new URL(
+				"https://froggsmp.vercel.app/multi",
+			),
+		);
+	}
+  
   const defaultLocale = request.headers.get("x-your-custom-locale") || "pt";
 
   const handleI18nRouting = createIntlMiddleware({
